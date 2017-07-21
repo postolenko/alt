@@ -141,8 +141,8 @@ $(document).ready(function() {
 
     function getPaddingTopPromo() {
 
-        $("section .row").css({
-            "padding-top" : $(".header-site").outerHeight() + "px"
+        $("section").css({
+            "padding-top" : $(".header-site").height() + "px"
         });
 
     }
