@@ -7,6 +7,31 @@ $(document).ready(function() {
 
     // ----------------------------
 
+    var indexAccordeon;
+    var accordeonItemCount;
+    var indexItem;
+
+    // ----------------------------
+
+    var videoBoxParent;
+    var videoBox;
+    var videoId;
+
+    // ----------------------------
+
+    var indexAccordeon;
+    var accordeonItemIndex;
+    var accordeonItemCount;
+    var parentAccordeonH;
+
+    // ----------------------------
+
+    var prevElemCoor;
+    var nextElemCoor;
+    var centerBlockHeight;
+
+    // ----------------------------
+
     var shapeCoor;
 
     // ----------------------------
@@ -51,8 +76,8 @@ $(document).ready(function() {
 
     $(function() {
 
-        var indexAccordeon = $(this).index();
-        var accordeonItemCount;
+        indexAccordeon = $(this).index();
+        accordeonItemCount;
 
         if( $(".accordeon").length > 0 ) {
 
@@ -60,7 +85,7 @@ $(document).ready(function() {
 
                 indexAccordeon = $(this).index();
 
-                for( var indexItem = 0; accordeonItemCount <= $(".accordeon:eq("+ indexAccordeon +") .accordeon-item").length - 1; indexItem ++ ) {
+                for( indexItem = 0; accordeonItemCount <= $(".accordeon:eq("+ indexAccordeon +") .accordeon-item").length - 1; indexItem ++ ) {
 
                     if( $(".accordeon:eq("+ indexAccordeon +") .accordeon-item:eq("+ indexItem +")").hasClass("active") ) {
 
@@ -113,11 +138,11 @@ $(document).ready(function() {
 
             $(this).fadeOut(300);
 
-            var videoBoxParent = $(this).closest(".video-block");
+            videoBoxParent = $(this).closest(".video-block");
 
-            var videoBox = videoBoxParent.children(".video-box");
+            videoBox = videoBoxParent.children(".video-box");
 
-            var videoId =  window[videoBox.children("video").attr("id")];
+            videoId =  window[videoBox.children("video").attr("id")];
 
             videoId.play();
 
@@ -128,13 +153,10 @@ $(document).ready(function() {
 
     $(function() {
 
-        var indexAccordeon;
-
-        var accordeonItemIndex;
-
-        var accordeonItemCount;
-
-        var parentAccordeonH;
+        indexAccordeon;
+        accordeonItemIndex;
+        accordeonItemCount;
+        parentAccordeonH;
 
         $(".accordeon").each(function() {
 
@@ -242,11 +264,11 @@ $(document).ready(function() {
 
     function getCenterBlockHeight() {
 
-        var prevElemCoor = $(".center-block").prev("div").offset().top + $(".center-block").prev("div").height();
+        prevElemCoor = $(".center-block").prev("div").offset().top + $(".center-block").prev("div").height();
 
-        var nextElemCoor = $(window).height() - $(".bottom-block").height();
+        nextElemCoor = $(window).height() - $(".bottom-block").height();
 
-        var centerBlockHeight = nextElemCoor - prevElemCoor;
+        centerBlockHeight = nextElemCoor - prevElemCoor;
 
         $(".center-block").css({
             "height" : centerBlockHeight + "px"
