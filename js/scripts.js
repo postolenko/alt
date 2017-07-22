@@ -7,11 +7,19 @@ $(document).ready(function() {
 
     // ----------------------------
 
-    getPaddingTopPromo();
+    var shapeCoor;
+
+    // ----------------------------
 
     getFooterPosition();
 
+    getPaddingTopSections();
+
     getCenterBlockHeight();
+
+    getPaddingBottomPromoSection();
+
+    getMobileShapePosition();
 
     $(window).resize(function() {
 
@@ -21,9 +29,22 @@ $(document).ready(function() {
 
         // -------------------
 
-        getPaddingTopPromo();
+        getPaddingTopSections();
 
         getCenterBlockHeight();
+
+        getPaddingBottomPromoSection();
+
+        getHeaderSiteStyle();
+
+        getMobileShapePosition();
+
+    });
+
+
+    $(document).scroll(function () {
+
+        getHeaderSiteStyle();
 
     });
 
@@ -39,31 +60,13 @@ $(document).ready(function() {
 
                 indexAccordeon = $(this).index();
 
-                // var accordeonItem = $(this).children(".accordeon-item");
-
-                // var accordeonItemContent = accordeonItem.children(".accordeon-item-content");
-
-                console.log(indexAccordeon);
-
-
                 for( var indexItem = 0; accordeonItemCount <= $(".accordeon:eq("+ indexAccordeon +") .accordeon-item").length - 1; indexItem ++ ) {
 
-
-                    console.log(accordeonItemCount);
-
                     if( $(".accordeon:eq("+ indexAccordeon +") .accordeon-item:eq("+ indexItem +")").hasClass("active") ) {
-
-                        console.log("active");
-
-                        // accordeonItemContent.slideDown(300);
-
-                        // return true;
 
                         $(".accordeon:eq("+ indexAccordeon +") .accordeon-item:eq("+ indexItem +") .accordeon-item-content").slideDown(300);
 
                     } else {
-
-                        // accordeonItemContent.slideUp(300);
 
                         $(".accordeon:eq("+ indexAccordeon +") .accordeon-item:eq("+ indexItem +") .accordeon-item-content").slideUp(300);
 
@@ -85,7 +88,9 @@ $(document).ready(function() {
 
     $(function() {
 
-        $(".scroll-down").click(function () {
+        $(".scroll-down").click(function (e) {
+
+            e.preventDefault();
 
             $("body,html").animate({
 
@@ -118,31 +123,133 @@ $(document).ready(function() {
 
         });
 
-    });    
+    });
+
+
+    $(function() {
+
+        var indexAccordeon;
+
+        var accordeonItemIndex;
+
+        var accordeonItemCount;
+
+        var parentAccordeonH;
+
+        $(".accordeon").each(function() {
+
+            indexAccordeon = $(this).index();
+
+            $(this).children(".accordeon-item").each(function() {
+
+                if( !$(this).hasClass("active") ) {
+
+                    $(this).children(".accordeon-item-content").slideUp(300);
+
+                }
+
+            });
+
+        });
+
+
+        $(".accordeon-title").click(function(e) {
+
+            e.preventDefault();
+
+            parentAccordeon = $(this).closest(".accordeon");
+
+            indexAccordeon = parentAccordeon.index();
+
+            parentAccordeonH = $(this).parent(".accordeon-item");
+
+            if( parentAccordeonH.hasClass("active") ) {
+
+                return false;
+
+            } else {
+
+                accordeonItemCount = $(".accordeon:eq("+indexAccordeon+") .accordeon-item").length - 1;
+
+                for( accordeonItemIndex = 0; accordeonItemIndex <= accordeonItemCount; accordeonItemIndex++) {
+
+                    if( $(".accordeon:eq("+indexAccordeon+") .accordeon-item:eq("+ accordeonItemIndex +")").hasClass("active") ) {
+
+                        $(".accordeon:eq("+indexAccordeon+") .accordeon-item:eq("+ accordeonItemIndex +") .accordeon-item-content").slideUp(300);
+
+                        $(".accordeon:eq("+indexAccordeon+") .accordeon-item:eq("+ accordeonItemIndex +")").removeClass("active");
+
+                    }
+
+                }
+
+                 $(this).next(".accordeon-item-content").slideDown(300);
+
+                parentAccordeonH.addClass("active");
+
+            }
+
+        });
+
+    });
+
+    $(function() {
+
+        $(".respmenubtn").click(function() {
+            
+            if( $(".main-nav").is(":hidden") ) {
+
+                $(".main-nav").fadeIn(300);
+
+                $(this).addClass("active");
+
+                $(".header-site").addClass("main-nav_active");
+
+            } else {
+
+                $(".main-nav").fadeOut(300);
+
+                $(this).removeClass("active");
+
+                $(".header-site").removeClass("main-nav_active");
+
+            }
+
+        });
+
+    });
 
 
     // -------------------
 
 
-    function getCenterBlockHeight() {
+    function getPaddingTopSections() {
 
-        var prevElemCoor = $(".center-block").prev("div").offset().top + $(".center-block").prev("div").height();
-
-        var nextElemCoor = $(".center-block").next("div").offset().top;
-
-        var centerBlockHeight = nextElemCoor - prevElemCoor;
-
-        $(".center-block").css({
-            "height" : centerBlockHeight + "px"
+        $("section").css({
+            "padding-top" : $(".header-site").outerHeight() + "px"
         });
 
     }
 
 
-    function getPaddingTopPromo() {
+    function getPaddingBottomPromoSection() {
 
-        $("section").css({
-            "padding-top" : $(".header-site").height() + "px"
+        $(".promo-section").css({
+            "padding-bottom" : $(".bottom-block").height() + "px"
+        });
+
+    }
+
+    function getCenterBlockHeight() {
+
+        var prevElemCoor = $(".center-block").prev("div").offset().top + $(".center-block").prev("div").height();
+
+        var nextElemCoor = $(window).height() - $(".bottom-block").height();
+
+        var centerBlockHeight = nextElemCoor - prevElemCoor;
+
+        $(".center-block").css({
+            "height" : centerBlockHeight + "px"
         });
 
     }
@@ -171,6 +278,30 @@ $(document).ready(function() {
 
         }, 35);
 
+    }
+
+    function getHeaderSiteStyle() {
+
+        if( $(window).scrollTop() >= $(".promo-section").height() ) {
+
+            $(".header-site").addClass("inner_page");
+
+        } else {
+
+            $(".header-site").removeClass("inner_page");
+
+        }
+
+    }
+
+
+    function getMobileShapePosition() {
+
+        shapeCoor = $(".footer").height() + $(".footer").offset().top - $(".mobiles").offset().top;
+
+        $(".mobiles-img").css({
+            "bottom" : -1 * shapeCoor + "px"
+        });
     }
 
 

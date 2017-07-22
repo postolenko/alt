@@ -78,7 +78,7 @@ body {
 
 
 .clearfix:after {
-    content: "."; 
+    content: ""; 
     display: block; 
     height: 0; 
     clear: both; 
@@ -175,28 +175,55 @@ section {
 }
 
 h1 {
-
+    font-family: "Noto Serif", Arial, Verdana, sans-serif;
+    font-size: 60px;
+    line-height: 67px;
+    font-weight: bold;
+    color: #ffffff;
+    border-bottom: 2px solid #b7bcc0;
+    text-align: center;
 }
 
-
 h2 {
-
+    font-family: "Noto Serif", Arial, Verdana, sans-serif;
+    font-size: 60px;
+    line-height: 74px;
+    font-weight: bold;
+    color: #232a32;
 }
 
 h3 {
-
+    font-family: "Avenir Next", Arial, Verdana, sans-serif;
+    font-size: 22px;
+    line-height: 24px;
+    font-weight: 700;
+    color: #000000;
+    padding: 20px 0;
 }
 
 p {
-
+    font-family: "Avenir Next", Arial, Verdana, sans-serif;
+    font-size: 18px;
+    line-height: 30px;
+    font-weight: normal;
+    color: #44596b;
 }
 
 li {
+    font-family: "Avenir Next", Arial, Verdana, sans-serif;
+    font-size: 18px;
+    line-height: 18px;
+    font-weight: bold;
     list-style: none;
 }
 
 a {
     text-decoration: none;
+    font-family: "Avenir Next", Arial, Verdana, sans-serif;
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: normal;
+    color: #506475;
 }
 
 img {
@@ -239,6 +266,10 @@ a:active {
     text-align: center;
 }
 
+.align-right {
+    text-align: right;
+}
+
 /*-------------------------------------------*/
 /* ----- HEADER ------ */
 /*-------------------------------------------*/
@@ -249,9 +280,28 @@ a:active {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 10;
+    z-index: 13;
     padding: 49px 0 10px 0;
-    /*outline: 1px solid red;*/
+
+    -webkit-transition-property: background;
+    -webkit-transition-duration: .3s;
+    -webkit-transition-timing-function: ease;
+
+    -moz-transition-property: background;
+    -moz-transition-duration: .3s;
+    -moz-transition-timing-function: ease;
+
+    -ms-transition-property: background;
+    -ms-transition-duration: .3s;
+    -ms-transition-timing-function: ease;
+
+    -o-transition-property: background;
+    -o-transition-duration: .3s;
+    -o-transition-timing-function: ease;
+
+    transition-property: background;
+    transition-duration: .3s;
+    transition-timing-function: ease;
 }
 
 .header-site .col {
@@ -274,14 +324,54 @@ a:active {
     vertical-align: top;
     width: 99px;
     height: auto;
+    position: relative;
+    top: -44px;
 }
 
 .logo-box img {
     display: block;
     min-width: 100%;
-    min-height: 100%;
     width: auto;
     height: auto;
+    opacity: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-transition-property: opacity;
+    -webkit-transition-duration: .3s;
+    -webkit-transition-timing-function: ease;
+
+    -moz-transition-property: opacity;
+    -moz-transition-duration: .3s;
+    -moz-transition-timing-function: ease;
+
+    -ms-transition-property: opacity;
+    -ms-transition-duration: .3s;
+    -ms-transition-timing-function: ease;
+
+    -o-transition-property: opacity;
+    -o-transition-duration: .3s;
+    -o-transition-timing-function: ease;
+
+    transition-property: opacity;
+    transition-duration: .3s;
+    transition-timing-function: ease;
+}
+
+.logo-box img.black-logo {
+    opacity: 0;
+}
+
+.header-site.inner_page {
+
+}
+
+.header-site.inner_page .logo-box img {
+    opacity: 0;
+}
+
+.header-site.inner_page .logo-box img.black-logo {
+    opacity: 1;
 }
 
 .contacts-list {
@@ -295,8 +385,8 @@ a:active {
     display: inline-block;
     vertical-align: top;
     font-family: "Avenir Next", Arial, Verdana, sans-serif;
-    font-size: 16px;
-    line-height: 26px;
+    font-size: 18px;
+    line-height: 22px;
     font-weight: bold;
     color: #90a9b7;
     margin: 0 5%;
@@ -305,10 +395,10 @@ a:active {
 .contacts-list li a {
     display: inline-block;
     vertical-align: top;
-    font-family: "Oswald", Arial, Verdana, sans-serif;
-    font-size: 16px;
-    line-height: 16px;
-    font-weight: normal;
+    font-family: "Avenir Next", Arial, Verdana, sans-serif;
+    font-size: 18px;
+    line-height: 18px;
+    font-weight: bold;
     color: #ffffff;
     margin: 5px 0;
 
@@ -355,6 +445,7 @@ a:active {
 
 .contacts-list li a.blue-link {
     color: #90a9b7;
+    margin: 0;
 }
 
 .contacts-list li a.blue-link.active,
@@ -366,13 +457,19 @@ a:active {
     color: #90a9b7;
 }
 
+.contacts-list li span {
+    display: block;
+    font-size: 18px;
+    line-height: 19px;
+}
+
 .call-back {
     display: inline-block;
     vertical-align: top;
     font-family: "Avenir Next", Arial, Verdana, sans-serif;
     font-size: 16px;
     line-height: 19px;
-    font-weight: normal;
+    font-weight: bold;
     color: #ffffff;
     margin: 20px 2%;
     border-bottom: 1px dashed #ffffff;
@@ -421,11 +518,11 @@ a:active {
     font-family: "Avenir Next", Arial, Verdana, sans-serif;
     font-size: 16px;
     line-height: 16px;
-    font-weight: normal;
+    font-weight: bold;
     color: #000000;
     background: rgb(251, 198, 35);
     margin: 10px 3%;
-    padding: 11px 30px 15px 30px;
+    padding: 16px 30px;
 
     -webkit-transition-property: background;
     -webkit-transition-duration: .3s;
@@ -470,7 +567,7 @@ a:active {
     text-align: right;
     position: relative;
     z-index: 11;
-    margin: 13px 0 13px 7%;
+    margin: 18px 0 13px 7%;
 }
 
 .respmenubtn {
@@ -525,15 +622,15 @@ a:active {
 }
 
 .respmenubtn:hover span {
-    border: 1px solid #90a9b7;
-    background:  #90a9b7;
+    border: 1px solid #2c3e50;
+    background:  #2c3e50;
 }
 
 .respmenubtn.active span {
     position: relative;
     top: -1px;
-    border: 1px solid #90a9b7;
-    background:  #90a9b7;
+    border: 1px solid #2c3e50;
+    background: #2c3e50;
 }
 
 .respmenubtn.active span:last-child {
@@ -559,6 +656,277 @@ a:active {
 
 /* ----- / Responsive Menu Button ------ */
 
+.header-site.inner_page .contacts-list li a:link,
+.header-site.inner_page .contacts-list li a:visited {
+    color: #222f3a;
+}
+
+.header-site.inner_page .contacts-list li a.active {
+    color: #90a9b7;
+}
+
+.header-site.inner_page .contacts-list li a:active,
+.header-site.inner_page .contacts-list li a:hover {
+    color: #90a9b7;
+}
+
+.header-site.inner_page .contacts-list li a.blue-link:link,
+.header-site.inner_page .contacts-list li a.blue-link:visited {
+    color: #90a9b7;
+}
+
+.header-site.inner_page a.call-back:link,
+.header-site.inner_page a.call-back:visited {
+    color: #222f3a;
+    border-bottom: 1px dashed #222f3a;
+}
+
+.header-site.inner_page a.call-back.active {
+    color: #90a9b7;
+    border-bottom: 1px dashed #90a9b7;
+}
+
+.header-site.inner_page a.call-back:active,
+.header-site.inner_page a.call-back:hover {
+    color: #90a9b7;
+    border-bottom: 1px dashed #90a9b7;
+}
+
+.header-site.inner_page .respmenubtn span {
+    border: 1px solid #2c3e50;
+    background: rgba(44, 62, 80, 1);
+}
+
+.header-site.inner_page .respmenubtn.active span {
+    border: 1px solid #2c3e50;
+    background: #2c3e50;
+}
+
+/*-- Main Nav --*/
+
+.header-site.main-nav_active {
+    background: rgba(251, 198, 35, 1);
+}
+
+.header-site.main-nav_active .logo-box img {
+    opacity: 0;
+}
+
+.header-site.main-nav_active .logo-box img.black-logo {
+    opacity: 1;
+}
+
+.header-site.main-nav_active .contacts-list li a:link,
+.header-site.main-nav_active .contacts-list li a:visited {
+    color: #222f3a;
+}
+
+.header-site.main-nav_active .contacts-list li span {
+    color: #222f3a;
+}
+
+.header-site.main-nav_active .contacts-list li a.active {
+    color: #ffffff;
+}
+
+.header-site.main-nav_active .contacts-list li a:active,
+.header-site.main-nav_active .contacts-list li a:hover {
+    color: #ffffff;
+}
+
+.header-site.main-nav_active .contacts-list li a.blue-link:link,
+.header-site.main-nav_active .contacts-list li a.blue-link:visited {
+    color: #222f3a;
+}
+
+.header-site.main-nav_active .contacts-list li a.blue-link:hover,
+.header-site.main-nav_active .contacts-list li a.blue-link:active {
+    color: #ffffff;
+}
+
+.header-site.main-nav_active a.call-back:link,
+.header-site.main-nav_active a.call-back:visited {
+    color: #222f3a;
+    border-bottom: 1px dashed #222f3a;
+}
+
+.header-site.main-nav_active a.call-back.active {
+    color: #ffffff;
+    border-bottom: 1px dashed #ffffff;
+}
+
+.header-site.main-nav_active a.call-back:active,
+.header-site.main-nav_active a.call-back:hover {
+    color: #ffffff;
+    border-bottom: 1px dashed #ffffff;
+}
+
+.header-site.main-nav_active .yellow-btn:link,
+.header-site.main-nav_active .yellow-btn:visited {
+    background: rgb(255, 255, 255);
+}
+
+.header-site.main-nav_active .yellow-btn:active,
+.header-site.main-nav_active .yellow-btn:hover {
+    background: rgb(0, 0, 0);
+    color: #ffffff;
+}
+
+.header-site.main-nav_active .respmenubtn span {
+    border: 1px solid #222f3a;
+    background: #222f3a;
+}
+
+.header-site.main-nav_active .respmenubtn:active span,
+.header-site.main-nav_active .respmenubtn:hover span {
+    border: 1px solid #2c3e50;
+    background: #2c3e50;
+}
+
+.main-nav {
+    padding: 10px 0;
+    display: none;
+}
+
+.main-nav .col {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.main-nav .col-1 {
+    width: 13%;
+}
+
+.main-nav .col-2 {
+    width: 46%;
+    text-align: left;
+}
+
+.main-nav .col-3 {
+    width: 41%;
+    text-align: right;
+    padding-right: 10%;
+}
+
+.main-nav ul {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.main-nav .col-2 ul {
+    width: 48%;
+    padding: 0 2% 0 0;
+}
+
+.main-nav ul li {
+    padding: 16px 0;
+}
+
+.main-nav ul li a {
+    font-family: "Avenir Next", Arial, Verdana, sans-serif;
+    font-size: 18px;
+    line-height: 18px;
+    font-weight: bold;
+    color: #1f2c37;
+    text-decoration: underline;
+
+    -webkit-transition-property: color;
+    -webkit-transition-duration: .3s;
+    -webkit-transition-timing-function: ease;
+
+    -moz-transition-property: color;
+    -moz-transition-duration: .3s;
+    -moz-transition-timing-function: ease;
+
+    -ms-transition-property: color;
+    -ms-transition-duration: .3s;
+    -ms-transition-timing-function: ease;
+
+    -o-transition-property: color;
+    -o-transition-duration: .3s;
+    -o-transition-timing-function: ease;
+
+    transition-property: color;
+    transition-duration: .3s;
+    transition-timing-function: ease;
+}
+
+.main-nav ul li a:link,
+.main-nav ul li a:visited {
+    color: #1f2c37;
+}
+
+.main-nav ul li a.active,
+.main-nav ul li a:active {
+    color: #ffffff;
+}
+
+.main-nav ul li a:hover {
+    color: #ffffff;
+}
+
+.triangle-icon {
+    display: block;
+    width: 39px;
+    height: 30px;
+    margin: 4px auto;
+    background-image: url(../img/main_nav_shape.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.shape-link {
+    text-align: center;
+}
+
+p.shape {
+    text-align: center;
+    padding: 4px 0 0 0;
+}
+
+p.shape span {
+    font-family: "Avenir Next", Arial, Verdana, sans-serif;
+    font-size: 18px;
+    line-height: 18px;
+    font-weight: bold;
+    color: #1f2c37;
+    opacity: .7;
+}
+
+.main-nav .app-store-link-pill {
+    display: inline-table;
+    vertical-align: top;
+    width: 48%;
+    min-width: auto;
+    margin: 10px 2%;
+}
+
+.main-nav .app-store-link-pill:nth-child(n + 1) {
+    margin: 25px 2% 25px 0;
+}
+
+.main-nav .app-store-link-pill:nth-child(2n) {
+    margin: 25px 0 25px 2%;
+}
+
+.main-nav .col-3 .inner {
+    display: inline-block;
+    vertical-align: top;
+    width: 90%;
+    max-width: 440px;
+}
+
+.main-nav .col-3 .yellow-btn {
+    width: 100%;
+    max-width: 100%;
+    margin: 25px 0;
+    font-size: 18px;
+    line-height: 18px;
+    text-align: center;
+}
+
+/*-- /Main Nav --*/
 
 /*-------------------------------------------*/
 /* ----- Bottom Fixed Block------ */
@@ -695,7 +1063,6 @@ a:active {
 .promo-section .row {
     position: relative;
     z-index: 2;
-    min-height: 100vh;
 }
 
 .accordeon-block {
@@ -715,8 +1082,8 @@ a:active {
     vertical-align: top;
     position: relative;
     font-family: "Avenir Next", Arial, Verdana, sans-serif;
-    font-size: 25px;
-    line-height: 25px;
+    font-size: 40px;
+    line-height: 40px;
     font-weight: normal;
     color: #ffffff;
     margin: 5px 0;
@@ -764,7 +1131,7 @@ a:active {
     width: 15px;
     height: 15px;
     position: absolute;
-    top: 4px;
+    top: 12px;
     left: 0;
     background: #ffffff;
 }
@@ -782,14 +1149,13 @@ a:active {
 }
 
 .accordeon-item-content {
-    /*display: none;*/
     padding: 18px 0 0 9%;
 }
 
 .accordeon-item-content p {
     font-family: "Avenir Next", Arial, Verdana, sans-serif;
-    font-size: 16px;
-    line-height: 25px;
+    font-size: 24px;
+    line-height: 36px;
     font-weight: normal;
     color: #ffffff;
 }
@@ -821,7 +1187,7 @@ a:active {
     line-height: 67px;
     font-weight: bold;
     color: #ffffff;
-    border-bottom: 1px solid #b7bcc0;
+    border-bottom: 2px solid #b7bcc0;
 }
 
 .center-block h1 span {
@@ -835,7 +1201,7 @@ a:active {
     cursor: pointer;
     text-align: center;
     margin: 25px 0;
-    padding: 31px 1% 36px 1%;
+    padding: 33px 1% 36px 1%;
     background: rgba(224, 229, 227, 1);
     border: 1px solid transparent;
     -webkit-border-radius: 9px;
@@ -890,6 +1256,7 @@ a:active {
     position: absolute;
     left: 0;
     bottom: 0;
+    z-index: 2;
 }
 
 .bottom-block h2 {
@@ -944,10 +1311,10 @@ a:active {
 }
 
 .category-item h2 {
-    font-family: "Avenir Next", Arial, Verdana, sans-serif;
-    font-size: 45px;
-    line-height: 62px;
-    font-weight: normal;
+    font-family: "Noto Serif", Arial, Verdana, sans-serif;
+    font-size: 60px;
+    line-height: 72px;
+    font-weight: bold;
     color: #232a32;
 }
 
@@ -956,7 +1323,7 @@ a:active {
 }
 
 .first-item .inner {
-    padding: 75px 0 20px 7%;
+    padding: 75px 0 75px 7%;
     background: rgba(255, 255, 255, 0);
     box-shadow: none;
 }
@@ -1022,12 +1389,17 @@ a:active {
     padding: 20px 0;
 }
 
-.category-item-row .col-1 p {
+.category-item-row .col-1 a {
     font-family: "Avenir Next", Arial, Verdana, sans-serif;
-    font-size: 15px;
-    line-height: 25px;
+    font-size: 18px;
+    line-height: 28px;
     font-weight: normal;
     color: #506475;
+}
+
+.category-item-row .col-1 a:hover {
+    text-decoration: underline;
+    text-decoration-color: #e6eef7;
 }
 
 .price {
@@ -1040,6 +1412,32 @@ a:active {
     -ms-border-radius: 3px 0 0 3px;
     -o-border-radius: 3px 0 0 3px;
     border-radius: 3px 0 0 3px;
+
+    -webkit-transition-property: box-shadow;
+    -webkit-transition-duration: .3s;
+    -webkit-transition-timing-function: ease;
+
+    -moz-transition-property: box-shadow;
+    -moz-transition-duration: .3s;
+    -moz-transition-timing-function: ease;
+
+    -ms-transition-property: box-shadow;
+    -ms-transition-duration: .3s;
+    -ms-transition-timing-function: ease;
+
+    -o-transition-property: box-shadow;
+    -o-transition-duration: .3s;
+    -o-transition-timing-function: ease;
+
+    transition-property: box-shadow;
+    transition-duration: .3s;
+    transition-timing-function: ease;
+}
+
+.price:hover {
+    -webkit-box-shadow: 0px 0px 17px 0px rgba(251,197,35,0.9);
+    -moz-box-shadow: 0px 0px 17px 0px rgba(251,197,35,0.9);
+    box-shadow: 0px 0px 17px 0px rgba(251,197,35,0.9);
 }
 
 .price .tr {
@@ -1090,7 +1488,7 @@ a:active {
 }
 
 .two-cols-article .col-1 .inner {
-    padding: 28px 6% 32px 11%;
+    padding: 16px 6% 38px 11%;
     background: rgba(255, 255, 255, 1);
     -webkit-border-radius: 14px;
     -moz-border-radius: 14px;
@@ -1103,18 +1501,18 @@ a:active {
 }
 
 .two-cols-article h2 {
-    font-family: "Avenir Next", Arial, Verdana, sans-serif;
-    font-size: 56px;
-    line-height: 62px;
-    font-weight: normal;
+    font-family: "Noto Serif", Arial, Verdana, sans-serif;
+    font-size: 60px;
+    line-height: 74px;
+    font-weight: bold;
     color: #232a32;
-    padding: 27px 0;
+    padding: 18px 0;
 }
 
 .two-cols-article p {
     font-family: "Avenir Next", Arial, Verdana, sans-serif;
-    font-size: 19px;
-    line-height: 29px;
+    font-size: 18px;
+    line-height: 30px;
     font-weight: normal;
     color: #44596b;
     padding: 20px 0;
@@ -1124,8 +1522,8 @@ a:active {
     display: inline-block;
     vertical-align: top;
     width: 190px;
-    margin: 44px 0 30px 0;
-    padding: 5px 1% 9px 1%;
+    margin: 36px 0;
+    padding: 7px 1% 6px 1%;
     text-align: center;
     background: rgba(0, 0, 0, 0);
     border: 2px solid #000000;
@@ -1186,6 +1584,8 @@ a:active {
 }
 
 .hover-img {
+    width: 100%;
+    height: 100%;
     position: absolute;
     top: 0;
     left: 0;
@@ -1318,3 +1718,277 @@ footer {
 .footer {
     background: rgb(40, 55, 71);
 }
+
+.footer .col {
+    float: left;
+    padding: 28px 1%;
+}
+
+.footer .col-1 {
+    width: 23%;
+}
+
+.footer .col-2 {
+    width: 22%;
+}
+
+.footer .col-3 {
+    width: 21%;
+}
+
+.footer .col-4 {
+    width: 34%;
+}
+
+.seo-txt {
+
+}
+
+.seo-txt li {
+    padding: 18px 0;
+}
+
+.seo-txt li a {
+    display: inline-block;
+    vertical-align: top;
+    font-family: "Avenir Next", Arial, Verdana, sans-serif;
+    font-size: 18px;
+    line-height: 18px;
+    font-weight: normal;
+    color: #ffffff;
+    border-bottom: 1px solid #ffffff;
+
+    -webkit-transition-property: border-bottom;
+    -webkit-transition-duration: .3s;
+    -webkit-transition-timing-function: ease;
+
+    -moz-transition-property: border-bottom;
+    -moz-transition-duration: .3s;
+    -moz-transition-timing-function: ease;
+
+    -ms-transition-property: border-bottom;
+    -ms-transition-duration: .3s;
+    -ms-transition-timing-function: ease;
+
+    -o-transition-property: border-bottom;
+    -o-transition-duration: .3s;
+    -o-transition-timing-function: ease;
+
+    transition-property: border-bottom;
+    transition-duration: .3s;
+    transition-timing-function: ease;
+}
+
+.seo-txt li a:link,
+.seo-txt li a:visited {
+    border-bottom: 1px solid #ffffff;
+}
+
+.seo-txt li a.active {
+    border-bottom: 1px solid transparent;
+}
+
+.seo-txt li a:active {
+    border-bottom: 1px solid transparent;
+}
+
+.seo-txt li a:hover {
+    border-bottom: 1px solid transparent;
+}
+
+h4 {
+    font-family: "Avenir Next", Arial, Verdana, sans-serif;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: normal;
+    color: #ffffff;
+    padding: 15px 0;
+}
+
+.soc-links {
+    margin: 3px 0 3px -10px;
+}
+
+.soc-links li {
+    display: inline-block;
+    vertical-align: top;
+    padding: 10px;
+}
+
+.soc-links li a {
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    background: rgba(236, 182, 16, 0);
+    border: 2px solid #ffffff;
+
+    -webkit-transition-property: background, border;
+    -webkit-transition-duration: .3s;
+    -webkit-transition-timing-function: ease;
+
+    -moz-transition-property: background, border;
+    -moz-transition-duration: .3s;
+    -moz-transition-timing-function: ease;
+
+    -ms-transition-property: background, border;
+    -ms-transition-duration: .3s;
+    -ms-transition-timing-function: ease;
+
+    -o-transition-property: background, border;
+    -o-transition-duration: .3s;
+    -o-transition-timing-function: ease;
+
+    transition-property: background, border;
+    transition-duration: .3s;
+    transition-timing-function: ease;
+}
+
+.soc-links li a:link,
+.soc-links li a:visited {
+    background: rgba(236, 182, 16, 0);
+    border: 2px solid #ffffff;
+}
+
+.soc-links li a.active {
+    background: rgba(236, 182, 16, 1);
+    border: 2px solid #ecb610;
+}
+
+.soc-links li a:active {
+    background: rgba(236, 182, 16, 1);
+    border: 2px solid #ecb610;
+}
+
+.soc-links li a:hover {
+    background: rgba(236, 182, 16, 1);
+    border: 2px solid #ecb610;
+}
+
+.soc-links li a i {
+    display: inline-block;
+    vertical-align: top;    
+    font-size: 31px;
+    line-height: 47px;
+    color: #ffffff;
+}
+
+.mobiles {
+    position: relative;
+}
+
+.mobiles-img {
+    position: absolute;
+    bottom: -56px;
+    left: 0;
+    max-width: 56%;
+    max-height: auto;
+    width: auto;
+    height: auto;
+}
+
+.col-4-col-2 {
+    float: right;
+    width: 41%;
+}
+
+.app-store-link-pill {
+    display: inline-table;
+    vertical-align: top;
+    min-width: 207px;
+    width: 100%;
+    margin: 13px 0;
+    padding: 7px 0 11px 0;
+    background: rgba(255, 255, 255, 1);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+
+    -webkit-transition-property: box-shadow;
+    -webkit-transition-duration: .3s;
+    -webkit-transition-timing-function: ease;
+
+    -moz-transition-property: box-shadow;
+    -moz-transition-duration: .3s;
+    -moz-transition-timing-function: ease;
+
+    -ms-transition-property: box-shadow;
+    -ms-transition-duration: .3s;
+    -ms-transition-timing-function: ease;
+
+    -o-transition-property: box-shadow;
+    -o-transition-duration: .3s;
+    -o-transition-timing-function: ease;
+
+    transition-property: box-shadow;
+    transition-duration: .3s;
+    transition-timing-function: ease;
+}
+
+.app-store-link-pill:link,
+.app-store-link-pill:visited {
+    box-shadow: none;
+}
+
+.app-store-link-pill.active {
+    -webkit-box-shadow: 0px 4px 7px 1px rgba(255,255,255,0.5);
+    -moz-box-shadow: 0px 4px 7px 1px rgba(255,255,255,0.5);
+    box-shadow: 0px 4px 7px 1px rgba(255,255,255,0.5);
+}
+
+.app-store-link-pill:active {
+    -webkit-box-shadow: 0px 4px 7px 1px rgba(255,255,255,0.5);
+    -moz-box-shadow: 0px 4px 7px 1px rgba(255,255,255,0.5);
+    box-shadow: 0px 4px 7px 1px rgba(255,255,255,0.5);
+}
+
+.app-store-link-pill:hover {
+    -webkit-box-shadow: 0px 4px 7px 1px rgba(255,255,255,0.5);
+    -moz-box-shadow: 0px 4px 7px 1px rgba(255,255,255,0.5);
+    box-shadow: 0px 4px 7px 1px rgba(255,255,255,0.5);
+}
+
+.app-store-link-pill .app-col {
+    display: table-cell;
+    vertical-align: middle;
+    padding: 0 1%;
+}
+
+.app-store-link-pill .app-col-1 {
+    width: 76px;
+    text-align: center;
+    padding-top: 5px;
+}
+
+.app-store-link-pill .app-col-2 {
+    width: auto;
+    text-align: left;
+}
+
+.app-store-link-pill .app-col-1 img {
+    display: inline-block;
+    vertical-align: middle;
+    width: auto;
+    height: auto;
+    max-width: 80%;
+    max-height: 80%;
+}
+
+.app-store-link-pill p {
+    font-family: "Avenir Next", Arial, Verdana, sans-serif;
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: bold;
+    color: #1f2c37;
+}
+
+.app-store-link-pill p.p-1 {
+    font-size: 17px;
+    line-height: 21px;
+    color: #44596b;
+    text-transform: lowercase;
+}
+
