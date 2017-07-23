@@ -370,7 +370,8 @@
 	}
 
 	.video-block {
-	    height: 420px;
+	    /*height: 420px;*/
+	    height: 354px;
 	}
 
 	/*-- /Section 3 Main Page --*/
@@ -488,6 +489,10 @@
 
 	/*-- Section 3 Main Page --*/
 
+	.video-block {
+	    height: 275px;
+	}
+
 	.advantages-thumbnails .thumbnail {
 	    width: 100%;
 	    border-bottom: 1px solid #dfdfdf;
@@ -515,4 +520,19 @@
 
 	/*-- /Footer --*/
 
+}
+
+@media only screen and (max-width: 350px) {
+
+	/*-- Section 3 Main Page --*/
+
+	.two-cols-article {
+	    margin: 40px 0 10px 0;
+	}
+
+	.video-block {
+	    height: 210px;
+	}
+
+	/*-- /Section 3 Main Page --*/
 }

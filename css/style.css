@@ -1639,6 +1639,15 @@ p.shape span {
     position: relative;
 }
 
+.video-box {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
 .video-box video {
     display: block;
     width: 100%;

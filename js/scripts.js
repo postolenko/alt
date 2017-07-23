@@ -163,9 +163,9 @@ $(document).ready(function() {
 
             videoBoxParent = $(this).closest(".video-block");
 
-            videoBox = videoBoxParent.children("video");
+            videoBox = videoBoxParent.children(".video-box");
 
-            videoId =  window[videoBox.attr("id")];
+            videoId =  window[videoBox.children("video").attr("id")];
 
             videoId.play();
 
