@@ -1378,7 +1378,6 @@ p.shape span {
     /*display: block;*/
     display: none;
     width: 100%;
-    margin: 73px 0 0 0;
     padding: 10px 1% 12px 1%;
     cursor: pointer;
     text-align: center;
@@ -1390,6 +1389,7 @@ p.shape span {
     font-weight: bold;
     color: #000000;
     position: relative;
+    top: 73px;
     z-index: 2;
 
     -webkit-transition-property: background;
@@ -1889,26 +1889,30 @@ footer {
 }
 
 .footer .col-1 {
-    width: 23%;
+    width: 42%;
 }
 
 .footer .col-2 {
-    width: 22%;
+    width: 19%;
 }
 
 .footer .col-3 {
-    width: 18%;
+    width: 39%;
 }
-
+/*
 .footer .col-4 {
     width: 37%;
-}
+}*/
 
 .seo-txt {
-
+    font-size: 0;
+    line-height: 0;
 }
 
 .seo-txt li {
+    display: inline-block;
+    vertical-align: top;
+    width: 50%;
     padding: 16px 0;
 }
 
@@ -2033,15 +2037,17 @@ h4 {
 }
 
 .col-4-col-2 {
-    float: right;
+    display: inline-block;
+    vertical-align: top;
     width: 38%;
+    text-align: left;
 }
 
 .app-store-link-pill {
-    /*display: block;*/
     display: table;
     float: left;
-    width: 207px;
+    width: 100%;
+    max-width: 207px;
     margin: 13px 1%;
     padding: 7px 0 11px 0;
     font-size: 0;
