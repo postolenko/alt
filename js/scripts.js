@@ -99,6 +99,8 @@ $(document).ready(function() {
 
         getHeaderSiteStyle();
 
+        getHeaderSiteFixedPosition();
+
     });
 
 
@@ -406,7 +408,7 @@ $(document).ready(function() {
         
         promoSectionCoor = $("#promo_section").height();
 
-        if( $(".header-site").scrollTop() >= promoSectionCoor ) {
+        if( $(window).scrollTop() >= promoSectionCoor ) {
 
             $(".header-site").addClass("fixed-position");
 
