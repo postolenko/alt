@@ -158,7 +158,7 @@
 
 	.main-nav ul li a {
 	    font-size: 16px;
-	    line-height: 21px;
+	    line-height: 23px;
 	}
 
 	.main-nav .app-store-link-pill {
@@ -206,7 +206,7 @@
 	}
 
 	.main-nav ul li {
-	    padding: 11px 0;
+	    padding: 11px 4% 11px 0;
 	}
 
 	.main-nav .col-3 {
@@ -394,7 +394,12 @@
 	/*-- Main Nav --*/
 
 	.resp-contacts-list {
-		display: block;
+		display: block !important;
+	}
+
+	.resp-contacts-list li {
+		width: 50%;
+		margin: 0;
 	}
 
 	.main-nav .col-1,
@@ -403,8 +408,13 @@
 	    padding: 10px 0;
 	}
 
-	.resp-contacts-list {
-		display: block !important;
+	.main-nav ul li {
+	    padding: 7px 2% 7px 0;
+	}
+
+	.main-nav .col-3 .inner {
+	    width: 100%;
+	    max-width: 100%;
 	}
 
 	/*-- /Main Nav --*/
@@ -418,6 +428,10 @@
 	/*-- /Bottom Fixed Block --*/
 
 	/*-- Section 1 Main Page --*/
+
+	.promo-section {
+		padding-top: 73px !important;
+	}
 
 	.calc-btn {
 	    padding: 16px 15px 16px 15px;
@@ -508,26 +522,6 @@
 
 	/*-- /Section 1 Promo Section --*/
 
-	/*-- Footer --*/
-
-/*	.footer .col-1 {
-	    width: 100%;
-	}
-
-	.footer .col-2 {
-	    width: 100%;
-	}
-
-	.footer .col-3 {
-	    width: 100%;
-	}
-
-	.seo-txt li {
-	    padding: 8px 0;
-	}
-*/
-	/*-- /Footer --*/
-
 }
 
 
@@ -540,8 +534,8 @@
 	    padding: 0;
 	}
 
-	.main-nav ul li a {
-	    font-size: 16px;
+	.main-nav .col-2 ul li {
+	    width: 100%;
 	}
 
 	.main-nav .app-store-link-pill:nth-child(n + 1) {
@@ -646,3 +640,9 @@
 
 	/*-- /Section 3 Main Page --*/
 }
+
+/*@media only screen and (min-width: 769px) {
+	.white-btn {
+		top: 73px;
+	}
+}*/

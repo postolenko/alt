@@ -97,6 +97,8 @@ $(document).ready(function() {
 
         getHeaderSiteFixedPosition();
 
+        getPaddingTopSections();
+
     });
 
 
@@ -273,17 +275,21 @@ $(document).ready(function() {
 
     function getPaddingTopSections() {
 
-        if( bodyWidth > 600 ) { 
+        if( !$(".respmenubtn").hasClass("active") ) {       
 
-            $("section").css({
-                "padding-top" : $(".header-site").outerHeight() + "px"
-            });
+            if( bodyWidth > 768 ) {
 
-        } else {
+                $("section").css({
+                    "padding-top" : $(".header-site").outerHeight() + "px"
+                });
 
-            $("section").css({
-                "padding-top" : 0 + "px"
-            });
+            } else {
+
+                $("section").css({
+                    "padding-top" : 0 + "px"
+                });
+
+            }
 
         }
 
@@ -308,7 +314,7 @@ $(document).ready(function() {
 
             } else {
 
-                prevElemCoor = $(".header-site").height() + $("#promoWhiteBtn").height();
+                prevElemCoor = $("#header_site").height() + $("#promoWhiteBtn").height();
 
             }
 
