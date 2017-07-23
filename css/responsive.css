@@ -498,6 +498,10 @@
 	    line-height: 44px;
 	}
 
+	.center-block {
+		padding: 80px 0 0 0;
+	}
+
 	.bottom-block h2 {
 		display: none;
 	}
