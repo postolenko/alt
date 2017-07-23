@@ -44,6 +44,10 @@ $(document).ready(function() {
 
     // ----------------------------
 
+    var promoSectionCoor;
+
+    // ----------------------------
+
     getFooterPosition();
 
     getPaddingTopSections();
@@ -57,6 +61,8 @@ $(document).ready(function() {
     getTrianglesSize();
 
     getMainNavHeight();
+
+    getHeaderSiteFixedPosition();
 
     $(window).resize(function() {
 
@@ -83,6 +89,8 @@ $(document).ready(function() {
         getTrianglesSize();
 
         getMainNavHeight();
+
+        getHeaderSiteFixedPosition();
 
     });
 
@@ -389,6 +397,22 @@ $(document).ready(function() {
             $(".main-nav").css({
                 "max-height" : $(window).height() - $("#header_site").height() + "px"
             });
+
+        }
+
+    }
+
+    function getHeaderSiteFixedPosition() {
+        
+        promoSectionCoor = $("#promo_section").height();
+
+        if( $(".header-site").scrollTop() >= promoSectionCoor ) {
+
+            $(".header-site").addClass("fixed-position");
+
+        } else {
+
+            $(".header-site").removeClass("fixed-position");
 
         }
 
