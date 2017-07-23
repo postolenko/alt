@@ -1,5 +1,12 @@
 $(document).ready(function() {
 
+    var w = window,
+    d = document,
+    e = d.documentElement,
+    g = d.getElementsByTagName('body')[0],
+    bodyWidth = w.innerWidth || e.clientWidth || g.clientWidth;
+
+    // ----------------------------
 
     var setFooterPositionInterval;
     var contentCoor;
@@ -36,6 +43,10 @@ $(document).ready(function() {
 
     // ----------------------------
 
+    var boderWidth;
+
+    // ----------------------------
+
     getFooterPosition();
 
     getPaddingTopSections();
@@ -46,11 +57,17 @@ $(document).ready(function() {
 
     getMobileShapePosition();
 
+    getTrianglesSize();
+
     $(window).resize(function() {
 
         $(".wrapper").css({"min-height" : $(window).height() + "px"});
 
         $(".wrapper").css({"padding-bottom" :  $(".footer").outerHeight(true) + "px"});
+
+        // -------------------
+
+        bodyWidth = w.innerWidth || e.clientWidth || g.clientWidth;
 
         // -------------------
 
@@ -63,6 +80,8 @@ $(document).ready(function() {
         getHeaderSiteStyle();
 
         getMobileShapePosition();
+
+        getTrianglesSize();
 
     });
 
@@ -247,9 +266,19 @@ $(document).ready(function() {
 
     function getPaddingTopSections() {
 
-        $("section").css({
-            "padding-top" : $(".header-site").outerHeight() + "px"
-        });
+        if( bodyWidth > 600 ) { 
+
+            $("section").css({
+                "padding-top" : $(".header-site").outerHeight() + "px"
+            });
+
+        } else {
+
+            $("section").css({
+                "padding-top" : 0 + "px"
+            });
+
+        }
 
     }
 
@@ -264,7 +293,15 @@ $(document).ready(function() {
 
     function getCenterBlockHeight() {
 
-        prevElemCoor = $(".center-block").prev("div").offset().top + $(".center-block").prev("div").height();
+        if( bodyWidth > 600 ) {
+
+            prevElemCoor = $(".center-block").prev("div").offset().top + $(".center-block").prev("div").height();
+
+        } else {
+
+            prevElemCoor = $(".header-site").height() + $("#promoWhiteBtn").height();
+
+        }
 
         nextElemCoor = $(window).height() - $(".bottom-block").height();
 
@@ -326,6 +363,21 @@ $(document).ready(function() {
         });
     }
 
+
+    function getTrianglesSize() {
+
+        $(".price").each(function() {
+
+            boderWidth = $(this).outerHeight() / 2;
+
+            $(this).children(".tr").css({
+                "border-top" : boderWidth + "px solid transparent",
+                "border-bottom" : boderWidth + "px solid transparent"
+            });
+
+        });
+
+    }
 
 
 });
