@@ -304,23 +304,27 @@ $(document).ready(function() {
 
     function getCenterBlockHeight() {
 
-        if( bodyWidth > 600 ) {
+        if( $(".promo-section").length > 0 ) {
 
-            prevElemCoor = $(".center-block").prev("div").offset().top + $(".center-block").prev("div").height();
+            if( bodyWidth > 600 ) {
 
-        } else {
+                prevElemCoor = $(".center-block").prev("div").offset().top + $(".center-block").prev("div").height();
 
-            prevElemCoor = $(".header-site").height() + $("#promoWhiteBtn").height();
+            } else {
+
+                prevElemCoor = $(".header-site").height() + $("#promoWhiteBtn").height();
+
+            }
+
+            nextElemCoor = $(window).height() - $(".bottom-block").height();
+
+            centerBlockHeight = nextElemCoor - prevElemCoor;
+
+            $(".center-block").css({
+                "height" : centerBlockHeight + "px"
+            });
 
         }
-
-        nextElemCoor = $(window).height() - $(".bottom-block").height();
-
-        centerBlockHeight = nextElemCoor - prevElemCoor;
-
-        $(".center-block").css({
-            "height" : centerBlockHeight + "px"
-        });
 
     }
 
@@ -352,15 +356,15 @@ $(document).ready(function() {
 
     function getHeaderSiteStyle() {
 
-        if( $(window).scrollTop() >= $(".promo-section").height() ) {
+        // if( $(window).scrollTop() >= $(".promo-section").height() ) {
 
-            $(".header-site").addClass("inner_page");
+        //     $(".header-site").addClass("inner_page");
 
-        } else {
+        // } else {
 
-            $(".header-site").removeClass("inner_page");
+        //     $(".header-site").removeClass("inner_page");
 
-        }
+        // }
 
     }
 
@@ -405,16 +409,27 @@ $(document).ready(function() {
     }
 
     function getHeaderSiteFixedPosition() {
+
+        if( $(".promo-section").length > 0 ) {
         
-        promoSectionCoor = $("#promo_section").height();
+            promoSectionCoor = $(".promo-section").height();
 
-        if( $(window).scrollTop() >= promoSectionCoor ) {
+            if( $(window).scrollTop() <= $(".promo-section").height() ) {
 
-            $(".header-site").addClass("fixed-position");
+                $(".header-site").removeClass("fixed-position");
+                $(".header-site").removeClass("inner_page");
+
+            } else {
+
+                $(".header-site").addClass("fixed-position");
+                $(".header-site").addClass("inner_page");
+
+            }
 
         } else {
 
-            $(".header-site").removeClass("fixed-position");
+            $(".header-site").addClass("fixed-position");
+            $(".header-site").addClass("inner_page");
 
         }
 
