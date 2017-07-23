@@ -40,10 +40,7 @@ $(document).ready(function() {
     // ----------------------------
 
     var shapeCoor;
-
-    // ----------------------------
-
-    var boderWidth;
+    var mainNavHeightж
 
     // ----------------------------
 
@@ -383,12 +380,14 @@ $(document).ready(function() {
 
     }
 
-    function getMainNavHeight() {
+    function getMainNavHeight() {        
 
-        if( $(".header").height() > $(window).height() ) {
+        mainNavHeight = $(".main-nav").offset().top + $(".main-nav").height();
+
+        if( mainNavHeight  > $(window).height() ) {
 
             $(".main-nav").css({
-                "height" : $(window).height() - $(".header-site").height() + "px"
+                "max-height" : $(window).height() - $("#header_site").height() + "px"
             });
 
         }

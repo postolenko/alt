@@ -1,14 +1,10 @@
 @media only screen and (max-width: 1770px) {
 
 	.row {
-		padding: 0 2%;
+		padding: 0 3%;
 	}
 
 	/*-- Header --*/
-
-	.header-site {
-	    padding: 7px 0 10px 0;
-	}
 
 	.contacts-list li a {
 	    font-size: 16px;
@@ -211,7 +207,7 @@
 	    line-height: 27px;
 	}
 
-	.center-block h1 {
+	.main-h {
 	    font-size: 47px;
 	    line-height: 59px;
 	}
@@ -282,6 +278,7 @@
 
 	.header-site {
     	background: rgba(251, 198, 35, 1);
+    	padding: 0 0 10px 0;
 	}
 
 	.logo-box img {
@@ -417,7 +414,7 @@
 	    min-width: 276px;
 	}
 
-	.center-block h1 {
+	.main-h { {
 	    font-size: 38px;
 	    line-height: 44px;
 	}
