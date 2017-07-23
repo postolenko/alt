@@ -163,9 +163,9 @@ $(document).ready(function() {
 
             videoBoxParent = $(this).closest(".video-block");
 
-            videoBox = videoBoxParent.children(".video-box");
+            videoBox = videoBoxParent.children("video");
 
-            videoId =  window[videoBox.children("video").attr("id")];
+            videoId =  window[videoBox.attr("id")];
 
             videoId.play();
 
@@ -385,9 +385,13 @@ $(document).ready(function() {
 
     function getMainNavHeight() {
 
-        $(".main-nav").css({
-            "height" : $(window).height() - $(".header-site").height() + "px"
-        });
+        if( $(".header").height() > $(window).height() ) {
+
+            $(".main-nav").css({
+                "height" : $(window).height() - $(".header-site").height() + "px"
+            });
+
+        }
 
     }
 
