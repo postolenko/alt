@@ -244,7 +244,7 @@ a:active {
 /*-------------------------------------------*/
 
 .row {
-    padding: 0 1%;
+    padding: 0 5%;
     max-width: 1770px;
     margin: 0 auto;
 }
@@ -840,9 +840,13 @@ a:active {
     line-height: 21px;
     font-weight: bold;
     color: #1f2c37;
-    text-decoration: underline;
-    -moz-text-decoration-color: #908037;
-    text-decoration-color: #908037;
+    background-image: -webkit-linear-gradient(180deg,#908037 0,#908037);
+    background-image: -moz-linear-gradient(180deg,#908037 0,#908037);
+    background-image: linear-gradient(180deg,#908037 0,#908037);
+    background-repeat: repeat-x;
+    background-position: 0 90%;
+    background-size: 1px 1px;
+    text-decoration: none;
 
     -webkit-transition-property: color;
     -webkit-transition-duration: .3s;
@@ -868,19 +872,24 @@ a:active {
 .main-nav ul li a:link,
 .main-nav ul li a:visited {
     color: #1f2c37;
+    background-image: -webkit-linear-gradient(180deg,#908037 0,#908037);
+    background-image: -moz-linear-gradient(180deg,#908037 0,#908037);
+    background-image: linear-gradient(180deg,#908037 0,#908037);
+    background-repeat: repeat-x;
+    background-position: 0 90%;
+    background-size: 1px 1px;
+    text-decoration: none;
 }
 
 .main-nav ul li a.active,
 .main-nav ul li a:active {
     color: #ffffff;
-    -moz-text-decoration-color: transparent;
-    text-decoration-color: transparent;
+    background-image: none;
 }
 
 .main-nav ul li a:hover {
     color: #ffffff;
-    -moz-text-decoration-color: transparent;
-    text-decoration-color: transparent;
+    background-image: none;
 }
 
 .triangle-icon {
@@ -1258,7 +1267,8 @@ p.shape span {
     cursor: pointer;
     text-align: center;
     margin: 25px 0;
-    padding: 33px 1% 36px 1%;
+    /*padding: 33px 1% 36px 1%;*/
+    padding: 33px 1% 26px 1%;
     /*background: rgba(224, 229, 227, 1);*/
     border: 1px solid transparent;
     -webkit-border-radius: 9px;
@@ -1267,7 +1277,7 @@ p.shape span {
     -o-border-radius: 9px;
     border-radius: 9px;
     font-family: "Avenir Next", Arial, Verdana, sans-serif;
-    font-size: 25px;
+    font-size: 28px;
     line-height: 32px;
     font-weight: bold;
     color: #304f65;
@@ -1360,7 +1370,7 @@ p.shape span {
     line-height: 26px;
     font-weight: normal;
     color: #fbc623;
-    border-bottom: 1px solid #fbc623;
+    border-bottom: 1px dashed #fbc623;
 }
 
 .scroll-down .scroll-down-arrow {
@@ -1543,8 +1553,13 @@ p.shape span {
 }
 
 .category-item-row .col-1 a:hover {
-    text-decoration: underline;
-    text-decoration-color: #e6eef7;
+    background-image: -webkit-linear-gradient(180deg,#e6eef7 0,#e6eef7);
+    background-image: -moz-linear-gradient(180deg,#e6eef7 0,#e6eef7);
+    background-image: linear-gradient(180deg,#e6eef7 0,#e6eef7);
+    background-repeat: repeat-x;
+    background-position: 0 90%;
+    background-size: 1px 1px;
+    text-decoration: none;
 }
 
 .price {
@@ -1661,14 +1676,14 @@ p.shape span {
     line-height: 30px;
     font-weight: normal;
     color: #44596b;
-    padding: 20px 0;
+    padding: 30px 0;
 }
 
 .transparent-pill {
     display: inline-block;
     vertical-align: top;
     width: 190px;
-    margin: 36px 0;
+    margin: 29px 0;
     padding: 7px 1% 6px 1%;
     text-align: center;
     background: rgba(0, 0, 0, 0);
@@ -1676,7 +1691,7 @@ p.shape span {
     font-family: "Avenir Next", Arial, Verdana, sans-serif;
     font-size: 19px;
     line-height: 29px;
-    font-weight: 700;
+    font-weight: 500;
     color: #000000;
 
     -webkit-transition-property: background, color;
@@ -1925,23 +1940,33 @@ footer {
     font-weight: normal;
     color: #ffffff;
     text-decoration: underline;
+    background-image: -webkit-linear-gradient(180deg,#ffffff 0,#ffffff);
+    background-image: -moz-linear-gradient(180deg,#ffffff 0,#ffffff);
+    background-image: linear-gradient(180deg,#ffffff 0,#ffffff);
+    background-repeat: repeat-x;
+    background-position: 0 90%;
+    background-size: 1px 1px;
+    text-decoration: none;
 }
 
 .seo-txt li a:link,
 .seo-txt li a:visited {
-    text-decoration: underline;
-}
-
-.seo-txt li a.active {
+    background-image: -webkit-linear-gradient(180deg,#ffffff 0,#ffffff);
+    background-image: -moz-linear-gradient(180deg,#ffffff 0,#ffffff);
+    background-image: linear-gradient(180deg,#ffffff 0,#ffffff);
+    background-repeat: repeat-x;
+    background-position: 0 90%;
+    background-size: 1px 1px;
     text-decoration: none;
 }
 
+.seo-txt li a.active,
 .seo-txt li a:active {
-    text-decoration: none;
+    background-image: none;
 }
 
 .seo-txt li a:hover {
-    text-decoration: none;
+    background-image: none;
 }
 
 h4 {
@@ -2105,14 +2130,11 @@ h4 {
 
 .app-store-link-pill .app-col {
     display: table-cell;
-    /*display: inline-block;*/
     vertical-align: middle;
-    /*padding: 0 1%;*/
     padding: 0 4%;
 }
 
 .app-store-link-pill .app-col-1 {    
-    /*width: 30%;*/
     width: 51px;
     text-align: center;
     padding-top: 5px;

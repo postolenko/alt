@@ -98,17 +98,17 @@
 	/*-- Section 3 Main Page --*/
 
 	.two-cols-article .col-1 .inner {
-	    padding: 16px 5% 38px 6%;
+	    padding: 40px 5% 40px 6%;
 	}
 
 	.two-cols-article h2 {
 	    font-size: 52px;
 	    line-height: 64px;
-	    padding: 4px 0;
+	    padding: 6px 0 12px 0;
 	}
 
 	.video-block {
-	    height: 468px;
+	    height: 510px;
 	}
 
 	/*-- /Section 3 Main Page --*/
