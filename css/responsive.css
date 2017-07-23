@@ -115,27 +115,6 @@
 
 	/*-- Footer --*/
 
-/*	.footer .col-1,
-	.footer .col-2 {
-	    width: 21%;
-	}
-
-	.footer .col-3 {
-	    width: 22%;
-	}
-
-	.footer .col-4 {
-	    width: 36%;
-	}*/
-
-/*	.mobiles {
-		display: none;
-	}*/
-
-	/*.col-4-col-2 {
-	    width: 100%;
-	}*/
-
 	.footer h4 {
 	    font-size: 15px;
 	    line-height: 23px;
@@ -479,7 +458,6 @@
 	}
 
 	.video-block {
-	    /*height: 420px;*/
 	    height: 354px;
 	}
 
@@ -506,10 +484,6 @@
 	/*-- /Header Site --*/
 
 	/*-- Section 1 Promo Section --*/
-
-	.promo-section {
-	    min-height: auto;
-	}
 
 	.promo-sect-bg {
 		display: none;

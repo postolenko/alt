@@ -82,8 +82,6 @@ $(document).ready(function() {
 
         getPaddingBottomPromoSection();
 
-        getHeaderSiteStyle();
-
         getMobileShapePosition();
 
         getTrianglesSize();
@@ -96,8 +94,6 @@ $(document).ready(function() {
 
 
     $(document).scroll(function () {
-
-        getHeaderSiteStyle();
 
         getHeaderSiteFixedPosition();
 
@@ -353,21 +349,6 @@ $(document).ready(function() {
         }, 35);
 
     }
-
-    function getHeaderSiteStyle() {
-
-        // if( $(window).scrollTop() >= $(".promo-section").height() ) {
-
-        //     $(".header-site").addClass("inner_page");
-
-        // } else {
-
-        //     $(".header-site").removeClass("inner_page");
-
-        // }
-
-    }
-
 
     function getMobileShapePosition() {
 
