@@ -1390,7 +1390,7 @@ p.shape span {
     color: #000000;
     position: relative;
     top: 73px;
-    z-index: 2;
+    z-index: 3;
 
     -webkit-transition-property: background;
     -webkit-transition-duration: .3s;
@@ -1447,9 +1447,9 @@ p.shape span {
     -ms-border-radius: 14px;
     -o-border-radius: 14px;
     border-radius: 14px;
-    -webkit-box-shadow: 0px 0px 17px 0px rgba(0, 0, 0, .1);
-    -moz-box-shadow: 0px 0px 17px 0px rgba(0, 0, 0, .1);
-    box-shadow: 0px 0px 17px 0px rgba(0, 0, 0, .1);
+    -webkit-box-shadow: 0px 8px 46px 0px rgba(175, 198, 217, .35);
+    -moz-box-shadow: 0px 8px 46px 0px rgba(175, 198, 217, .35);
+    box-shadow: 0px 8px 46px 0px rgba(175, 198, 217, .35);
 }
 
 .grid-sizer {
