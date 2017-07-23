@@ -59,6 +59,8 @@ $(document).ready(function() {
 
     getTrianglesSize();
 
+    getMainNavHeight();
+
     $(window).resize(function() {
 
         $(".wrapper").css({"min-height" : $(window).height() + "px"});
@@ -82,6 +84,8 @@ $(document).ready(function() {
         getMobileShapePosition();
 
         getTrianglesSize();
+
+        getMainNavHeight();
 
     });
 
@@ -375,6 +379,14 @@ $(document).ready(function() {
                 "border-bottom" : boderWidth + "px solid transparent"
             });
 
+        });
+
+    }
+
+    function getMainNavHeight() {
+
+        $(".main-nav").css({
+            "height" : $(window).height() - $(".header-site").height() + "px"
         });
 
     }
