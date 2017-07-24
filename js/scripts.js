@@ -245,11 +245,15 @@ $(document).ready(function() {
 
     $(function() {
 
+        $(".main-nav").slideUp(300);
+
         $(".respmenubtn").click(function() {
             
             if( $(".main-nav").is(":hidden") ) {
 
-                $(".main-nav").fadeIn(300);
+                // $(".main-nav").fadeIn(300);
+
+                $(".main-nav").slideDown(300);
 
                 $(this).addClass("active");
 
@@ -257,7 +261,9 @@ $(document).ready(function() {
 
             } else {
 
-                $(".main-nav").fadeOut(300);
+                // $(".main-nav").fadeOut(300);
+
+                $(".main-nav").slideUp(300);
 
                 $(this).removeClass("active");
 
@@ -275,21 +281,25 @@ $(document).ready(function() {
 
     function getPaddingTopSections() {
 
-        if( !$(".respmenubtn").hasClass("active") ) {       
+        if( !$(".respmenubtn").hasClass("active") ) {
 
-            if( bodyWidth > 768 ) {
+            setTimeout(function () {       
 
-                $("section").css({
-                    "padding-top" : $(".header-site").outerHeight() + "px"
-                });
+                if( bodyWidth > 768 ) {
 
-            } else {
+                    $("section").css({
+                        "padding-top" : $(".header-site").outerHeight() + "px"
+                    });
 
-                $("section").css({
-                    "padding-top" : 0 + "px"
-                });
+                } else {
 
-            }
+                    $("section").css({
+                        "padding-top" : 0 + "px"
+                    });
+
+                }
+
+            }, 400);
 
         }
 

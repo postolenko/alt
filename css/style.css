@@ -59,7 +59,7 @@ body {
     font-size: 15px;
     line-height: 20px;
     color: #333333;
-    background: rgb(246, 247, 249);
+    background: rgb(241, 243, 246);
 }
 
 .wrapper {
@@ -834,8 +834,8 @@ a:active {
     width: 100%;
 }
 
-.main-nav .col-2 ul {
-    width: 100%;
+.main-nav ul li {
+    padding: 11px 4% 12px 0;
 }
 
 .main-nav .col-2 ul li {
@@ -913,7 +913,7 @@ a:active {
     display: block;
     width: 39px;
     height: 30px;
-    margin: -2px auto 5px auto;
+    margin: -2px auto 2px auto;
     background-image: url(../img/main_nav_shape.png);
     background-position: center;
     background-repeat: no-repeat;
@@ -948,10 +948,12 @@ p.shape span {
 
 .main-nav .app-store-link-pill:nth-child(n + 1) {
     margin: 10px 2% 10px 0;
+    float: left;
 }
 
 .main-nav .app-store-link-pill:nth-child(2n) {
     margin: 10px 0 10px 2%;
+    float: right;
 }
 
 .main-nav .col-3 .inner {
@@ -1892,6 +1894,509 @@ p.shape span {
 }
 
 /*-- /Section 3 Main Page --*/
+
+
+/*-- Inner Page --*/
+
+/*-- Two Cols Content Template --*/
+    
+.two-cols-content-template {
+    margin: 0 0 50px 0;
+}
+
+.main-content {
+    width: 67%;
+    padding: 70px 0 0 0;
+    background: rgb(255, 255, 255);
+    -webkit-box-shadow: 0px 8px 46px 0px rgba(175, 198, 217, 0.35);
+    -moz-box-shadow: 0px 8px 46px 0px rgba(175, 198, 217, 0.35);
+    -ms-box-shadow: 0px 8px 46px 0px rgba(175, 198, 217, 0.35);
+    box-shadow: 0px 8px 46px 0px rgba(175, 198, 217, 0.35);
+}
+
+.main-content .inner {
+    padding: 10px 11%;
+}
+
+.main-content .inner.blue-bg {
+    background: rgb(249, 250, 251);
+}
+
+.sidebar {
+    width: 31%;
+    padding: 108px 3% 116px 3%;
+    -webkit-border-radius: 0 0 34px 34px;
+    -moz-border-radius: 0 0 34px 34px;
+    -ms-border-radius: 0 0 34px 34px;
+    -o-border-radius: 0 0 34px 34px;
+    border-radius: 0 0 34px 34px;
+    background: rgb(249, 250, 251);
+    -webkit-box-shadow: 0px 8px 46px 0px rgba(175, 198, 217, 0.35);
+    -moz-box-shadow: 0px 8px 46px 0px rgba(175, 198, 217, 0.35);
+    -ms-box-shadow: 0px 8px 46px 0px rgba(175, 198, 217, 0.35);
+    box-shadow: 0px 8px 46px 0px rgba(175, 198, 217, 0.35);
+}
+
+/*-- /Two Cols Content Template --*/
+
+/*-- Section 1 Osago Description Page --*/
+
+.main-content h2 {
+    font-family: "Noto Serif", Arial, Verdana, sans-serif;
+    font-size: 48px;
+    line-height: 60px;
+    font-weight: bold;
+    color: #232a32;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.h-descript {
+    font-family: "Avenir Next", Arial, Verdana, sans-serif;
+    font-size: 26px;
+    line-height: 36px;
+    font-weight: normal;
+    color: #1f2c37;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.yellow-btn-big-block {
+
+}
+
+.yellow-btn-big {
+    display: inline-block;
+    vertical-align: top;
+    min-width: 397px;
+    text-align: center;
+    cursor: pointer;
+    background: rgba(251, 198, 35, 1);
+    border: 2px solid #fbc623;
+    margin: 23px 0;
+    padding: 20px 1%;
+    font-family: "Avenir Next", Arial, Verdana, sans-serif;
+    font-size: 19px;
+    line-height: 29px;
+    font-weight: bold;
+    color: #243746;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    -ms-border-radius: 7px;
+    -o-border-radius: 7px;
+    border-radius: 7px;
+
+    -webkit-transition-property: box-shadow;
+    -webkit-transition-duration: .3s;
+    -webkit-transition-timing-function: ease;
+
+    -moz-transition-property: box-shadow;
+    -moz-transition-duration: .3s;
+    -moz-transition-timing-function: ease;
+
+    -ms-transition-property: box-shadow;
+    -ms-transition-duration: .3s;
+    -ms-transition-timing-function: ease;
+
+    -o-transition-property: box-shadow;
+    -o-transition-duration: .3s;
+    -o-transition-timing-function: ease;
+
+    transition-property: box-shadow;
+    transition-duration: .3s;
+    transition-timing-function: ease;
+}
+
+.yellow-btn-big:link,
+.yellow-btn-big:visited {
+    box-shadow: none;
+}
+
+.yellow-btn-big.active,
+.yellow-btn-big:active {
+    -webkit-box-shadow: 0px 6px 15px 0px rgba(251, 198, 35, .6);
+    -moz-box-shadow: 0px 6px 15px 0px rgba(251, 198, 35, .6);
+    box-shadow: 0px 6px 15px 0px rgba(251, 198, 35, .6);
+}
+
+.yellow-btn-big:hover {
+    -webkit-box-shadow: 0px 6px 15px 0px rgba(251, 198, 35, .6);
+    -moz-box-shadow: 0px 6px 15px 0px rgba(251, 198, 35, .6);
+    box-shadow: 0px 6px 15px 0px rgba(251, 198, 35, .6);
+}
+
+.photo-icon {
+    display: inline-block;
+    vertical-align: top;
+    width: 31px;
+    height: 28px;
+    background-image: url(../img/photo_icon.png);
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.yellow-btn-big .photo-icon {
+    margin: 0 4% 0 0;
+}
+
+.yellow-tabs-block {
+    margin: 17px 0;
+    padding: 20px 0;
+}
+
+.yellow-tabs-block h3 {
+    font-family: "Avenir Next", Arial, Verdana, sans-serif;
+    font-size: 26px;
+    line-height: 29px;
+    font-weight: normal;
+    color: #243746;
+}
+
+.yellow-tabs-links {
+    margin: 10px 0;
+    text-align: center;
+}
+
+.yellow-tabs-links li {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.yellow-tabs-links li a {
+    display: block;
+    width: 196px;
+    padding: 12px 2%;
+    font-family: "Avenir Next", Arial, Verdana, sans-serif;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: bold;
+    color: #243746;
+    text-align: center;
+    border: 1px solid #d6e2e8;
+    background: rgb(255, 255, 255);
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    border-radius: 4px;
+
+    -webkit-transition-property: border, background;
+    -webkit-transition-duration: .3s;
+    -webkit-transition-timing-function: ease;
+
+    -moz-transition-property: border, background;
+    -moz-transition-duration: .3s;
+    -moz-transition-timing-function: ease;
+
+    -ms-transition-property: border, background;
+    -ms-transition-duration: .3s;
+    -ms-transition-timing-function: ease;
+
+    -o-transition-property: border, background;
+    -o-transition-duration: .3s;
+    -o-transition-timing-function: ease;
+
+    transition-property: border, background;
+    transition-duration: .3s;
+    transition-timing-function: ease;
+}
+
+.yellow-tabs-links li a:link,
+.yellow-tabs-links li a:visited {
+    border: 1px solid #d6e2e8;
+    background: rgb(255, 255, 255);
+}
+
+.yellow-tabs-links li a.active,
+.yellow-tabs-links li a:active {
+    background: rgb(251, 198, 35);
+    border: 1px solid rgb(251, 198, 35);
+}
+
+.yellow-tabs-links li a:hover {
+    background: rgb(251, 198, 35);
+    border: 1px solid rgb(251, 198, 35);
+}
+
+.form-box {
+    margin: 10px 0;
+}
+
+.form-box h3 {
+    font-family: "Avenir Next", Arial, Verdana, sans-serif;
+    font-size: 26px;
+    line-height: 29px;
+    font-weight: normal;
+    color: #243746;
+    padding: 22px 0;
+}
+
+.form-box p {
+    font-family: "Avenir Next", Arial, Verdana, sans-serif;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: normal;
+    color: #44596b;
+}
+
+.selects-block {
+    padding: 39px 0 10px 0;
+}
+
+.select-box {
+    padding: 18px 0;
+}
+
+.radio-box {
+    position: relative;
+}
+
+.radio-box input[type="radio"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    opacity: .001;
+}
+
+.radio-box label {
+    display: inline-table;
+    vertical-align: top;
+    width: 100%;
+    font-family: "Avenir Next", Arial, Verdana, sans-serif;
+    font-size: 20px;
+    line-height: 29px;
+    font-weight: 500;
+    color: #243746;
+    position: relative;
+    padding: 0 2% 0 0;
+}
+
+.radio-box label:before {
+    display: table-cell;
+    vertical-align: top;
+    content: "";
+    width: 53px;
+    height: auto;
+    background-image: url(../img/radiobtn_sprite.png);
+    background-position: -84px -2px;
+    background-repeat: no-repeat;
+}
+
+.radio-box input[type="radio"]:checked + label:before  {
+    background-position: -7px -2px;
+}
+
+.radio-btns-block h3 {
+    font-family: "Avenir Next", Arial, Verdana, sans-serif;
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: normal;
+    color: #243746;
+}
+
+.radio-btns-block {
+    margin: 0 0 37px 0;
+}
+
+.radio-btns-block h3.red-txt {
+    color: #ed1c24;
+}
+
+.radio-btns-block h3 i {
+    font-size: 23px;
+    line-height: 23px;
+    color: #778996;
+    position: relative;
+    top: 1px;
+    margin: 0 0 0 6px;
+}
+
+.radio-btns-block .radio-box {
+    display: inline-block;
+    vertical-align: top;
+    width: 50%;
+    margin: 9px 0;
+}
+
+.dashed-btn {
+    display: inline-block;
+    vertical-align: top;
+    cursor: pointer;
+    min-width: 394px;
+    margin: 10px 1%;
+    padding: 17px 2%;
+    font-family: "Avenir Next", Arial, Verdana, sans-serif;
+    font-size: 22px;
+    line-height: 33px;
+    font-weight: normal;
+    color: #243746;
+    border: 2px dashed #b9c2d0;
+    background: rgba(185, 194, 208, 0);
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    border-radius: 8px;
+
+    -webkit-transition-property: border, background;
+    -webkit-transition-duration: .3s;
+    -webkit-transition-timing-function: ease;
+
+    -moz-transition-property: border, background;
+    -moz-transition-duration: .3s;
+    -moz-transition-timing-function: ease;
+
+    -ms-transition-property: border, background;
+    -ms-transition-duration: .3s;
+    -ms-transition-timing-function: ease;
+
+    -o-transition-property: border, background;
+    -o-transition-duration: .3s;
+    -o-transition-timing-function: ease;
+
+    transition-property: border, background;
+    transition-duration: .3s;
+    transition-timing-function: ease;
+}
+
+.dashed-btn:link,
+.dashed-btn:visited {
+    border: 2px dashed #b9c2d0;
+    background: rgba(185, 194, 208, 0);
+}
+
+.dashed-btn.active,
+.dashed-btn:active {
+    background: rgba(185, 194, 308, 1);
+    border: 2px solid #b9c2d0;
+}
+
+.dashed-btn:hover {
+    background: rgba(185, 194, 308, 1);
+    border: 2px solid #b9c2d0;
+}
+
+.btns-two-cols button {
+    width: 48%;
+    min-width: auto;
+}
+
+.btns-two-cols button:nth-child(n+1) {
+    margin: 10px 2% 10px 0;
+}
+
+.btns-two-cols button:nth-child(2n) {
+    margin: 10px 0 10px 2%;
+}
+
+/*-- Sidebar --*/
+
+.sidebar-header {
+
+}
+
+.two-cols-block.conpany-offer {
+    display: table;
+    width: 100%;
+}
+
+.two-cols-block.conpany-offer .col {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.two-cols-block.conpany-offer .col-1 {
+    width: auto;
+    padding: 0 3% 0 0;
+}
+
+.two-cols-block.conpany-offer .col-2 {
+    width: auto;
+    padding: 0 0 0 2%;
+}
+
+.conpany-offer .count-offers {
+    font-family: "Avenir Next", Arial, Verdana, sans-serif;
+    font-size: 86px;
+    line-height: 98px;
+    font-weight: bold;
+    color: #a4b8c5;
+}
+
+.conpany-offer h3 {
+    font-family: "Avenir Next", Arial, Verdana, sans-serif;
+    font-size: 34px;
+    line-height: 37px;
+    font-weight: bold;
+    color: #232a32;
+}
+
+.sidebar .yellow-tabs-block {
+    margin: 0 0 38px 0;
+    padding: 0;
+}
+
+.sidebar .yellow-tabs-links li {
+    width: 33%;
+    min-width: 128px;
+}
+
+.sidebar .yellow-tabs-links li a {
+    width: 100%;
+}
+
+.sidebar-content {
+    padding: 13px 0;
+}
+
+.company-item {
+    display: table;
+    width: 100%;
+    padding: 12px 0 18px 0;
+}
+
+.company-item .col {
+    display: table-cell;
+    vertical-align: top;
+}
+
+.company-item .col-1 {
+    width: 60%;
+}
+
+.company-item .col-2 {
+    width: 40%;
+    padding: 5px 0 0 0;
+    text-align: right;
+}
+
+.company-item .offer-price {
+    font-family: "Avenir Next", Arial, Verdana, sans-serif;
+    font-size: 34px;
+    line-height: 37px;
+    font-weight: bold;
+    color: #243746;
+    padding: 6px 0;
+}
+
+.company-item .price {
+    width: 100px;
+    text-align: left;
+    margin: 5px 0;    
+    padding: 11px 2% 11px 9%;
+}
+
+.company-item .price p.p-1 {
+    font-weight: bold;
+}
+
+/*-- Sidebar --*/
+
+/*-- Section 1 Osago Description Page --*/
+
+/*-- /Inner Page --*/
 
 /*-------------------------------------------*/
 /* ----- FOOTER ------ */
