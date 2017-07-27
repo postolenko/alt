@@ -585,8 +585,7 @@
   background-color: white;
   border: 1px solid #aaa;
   border-radius: 4px;
-  cursor: text; 
-  /*border: 2px solid #ed1c24;*/
+  cursor: text;
   border: 2px solid #aaaaaa;
 }
 
@@ -620,4 +619,29 @@
 .select2-container .select2-selection--single {
     height: 70px;
     padding: 0 20px;
+}
+
+.select2-search--dropdown .select2-search__field {
+    width: 100%;
+    padding: 19px 20px;
+    font-family: "Avenir Next", Arial, Verdana, sans-serif;
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: bold;
+    letter-spacing: 0.4px;
+    color: #44596b !important;
+}
+
+.select2-container--default .select2-search--dropdown .select2-search__field {
+    border-radius: 4px;
+    cursor: text;
+    border: 1px solid #aaaaaa;
+}
+
+.select2-search--dropdown {
+    padding: 0;
+}
+
+.select2-container--default .select2-selection--single {
+    cursor: pointer;
 }

@@ -16,18 +16,21 @@
 	<link rel="stylesheet" type="text/css" href="slick/slick.css">
 	<link rel="stylesheet" type="text/css" href="vendors/css/select2.css">
 	<link rel="stylesheet" type="text/css" href="vendors/css/jquery.mCustomScrollbar.css">
+	<link rel="stylesheet" type="text/css" href="vendors/css/jquery.rateyo.css">
+	<link rel="stylesheet" type="text/css" href="vendors/css/datepicker.css">
 	<script type="text/javascript" src="vendors/js/jquery.js"></script>
 	<script type="text/javascript" src="slick/slick.js"></script>
 	<script type="text/javascript" src="vendors/js/jquery.mCustomScrollbar.concat.min.js"></script>
 	<script type="text/javascript" src="vendors/js/smoothscroll.js"></script>
 	<script type="text/javascript" src="vendors/js/isotope-docs.min.js"></script>
 	<script type="text/javascript" src="vendors/js/select2.js"></script>
+	<script type="text/javascript" src="vendors/js/jquery.rateyo.min.js"></script>
+	<script type="text/javascript" src="vendors/js/datepicker.js"></script>
 	<script type="text/javascript" src="vendors/js/wow.min.js"></script>
 	<script>new WOW().init();</script>
 	<link rel="icon" type="image/png" href="favicon/favicon.ico" sizes="16x16">
 	
-	<title>Полис ОГПО</title>
-	
+	<title>Полис ОГПО</title>	
 
 </head>
 
@@ -56,7 +59,7 @@
 						<li><a href="tel:88000805557">88 000 805 557</a><br><span>Бесплатный</span></li>
 						<li><a href="tel:+77009788200">+ 77 009 788 200 </a><br><a target="_blank" href="https://api.whatsapp.com/send?phone=77009788200" class="blue-link">WhatsApp<i class="fa fa-whatsapp" aria-hidden="true"></i></a></li>
 					</ul>
-					<a class="call-back" href="#">Позвоните мне</a>
+					<a class="call-back show_popup" href="#">Позвоните мне</a>
 					<a href="#" class="yellow-btn">Заказать страховку</a>
 
 					<div class="respmenubtn-box">
@@ -154,6 +157,38 @@
 
 	<!-- /Header -->
 
+	<!-- Popups -->
+
+		<div class="popups-section">
+			
+			<div class="popup-bg"></div>
+
+			<div class="center-block">
+
+				<div class="center">
+
+					<div class="popup">
+
+						<button type="button" class="close-popup close-y-b"></button>
+
+						<h4>Перезвоните мне</h4>
+
+						<div class="input-box">
+							<input type="tel" placeholder="Ваш номер телефона">
+						</div>
+
+						<button type="submit" class="yellow-btn-big">Отправить</button>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+		<!-- /Popups -->
+
 		<!-- Content -->
 			<div class="content">
 
@@ -165,111 +200,577 @@
 
 				<div class="two-cols-content-template clearfix">
 
-					<div class="row clearfix">
+					<div class="row clearfix two_width">
 
 						<div class="main-content left">
 
-							<div class="inner">
-								
-								<h2>Расчет стоимости<br> полиса ОГПО</h2>
+							<div class="main-content-inner">
 
-								<p class="h-descript">Вы можете сообщить данные по телефону: <br>8 800 080 555 7 (звонки на номер являются бесплатными), либо воспользоваться кнопкой "Заполните вместо меня".</p>
+								<!-- Company Info Box -->
 
-								<div class="yellow-btn-big-block align-center">
+								<div class="company-info-box" data-company-info-box = "company_1">
+									
+									<div class="yellow-block">
+										<p>Вернуться к заполнению страховок</p>
+										<button type="button" class="close-y-b"></button>
+									</div>
 
-									<a href="#" class="yellow-btn-big"><i class="photo-icon"></i>Заполните вместо меня</a>
+									<div class="company-info-header offset-ziro">
+
+										<div class="col col-1">
+											<a href="" class="company-logo">
+												<img src="img/companies/company__01.png" alt="">
+											</a>
+										</div>
+
+										<div class="col col-2">
+											<p>Центральный офис</p>
+											<p class="p-1">г. Алматы, ул. Желтоксан, 59</p>
+										</div>
+
+										<div class="col col-3">
+											<p>Горячая линия</p>
+											<p class="p-1">8 800 080 0099</p>
+										</div>
+
+									</div>
+
+									<div class="company-info-content clearfix">
+
+										<div class="col-1 left">
+											
+											<ul class="mark-list">
+												<li>Собранные страховые премии (2016 г), млрд тг. - 49 млрд тг.</li>
+												<li>Позиции компании по рыночной доле - 1 из 25 <br>(среди компаний общего страхования)</li>
+												<li>Активы, млрд тг. - 202,2 млрд тг.</li>
+												<li>Позиции компании по размеру активов - 1 из 25 <br>(среди компаний общего страхования)</li>
+												<li>Выплаты / Премии, чистые - 0,41 <br> [ значение коэффициента выше среднего ]</li>
+												<li>Кредитный рейтинг от Standard & Poor's - BB+, kzAA-</li>
+												<li>Рейтинг A. M. Best <br>(кредитный рейтинг, финансовая устойчивость) - bbb+, B++</li>
+											</ul>
+
+											<div class="row-2">
+												<p>Год основания - 1995 г.</p>
+												<p>Веб-сайт - <a href="#" class="yellow-link">www.theeurasia.kz</a></p>
+											</div>
+
+										</div>
+
+										<div class="col-2 right">
+											
+											<div class="rating-table">
+
+												<div class="rating-table-header offset-ziro">
+													<div class="rating-box">
+														<div class="rating"></div>
+														<p>1.5</p>
+													</div>
+
+													<p class="p-col-2"><i class="fa fa-user" aria-hidden="true"></i> 1 оценил</p>
+
+												</div>
+
+												<div>
+
+													<div class="table-row">
+														<div class="cell-1">
+															<p>Качество сервиса</p>
+														</div>
+														<div class="cell-2">
+															<p>1.5</p>
+														</div>
+													</div>
+
+													<div class="table-row">
+														<div class="cell-1">
+															<p>Привлекательность цен</p>
+														</div>
+														<div class="cell-2">
+															<p>1.5</p>
+														</div>
+													</div>
+
+													<div class="table-row">
+														<div class="cell-1">
+															<p>Оперативность выплат</p>
+														</div>
+														<div class="cell-2">
+															<p>1.5</p>
+														</div>
+													</div>
+
+													<div class="table-row">
+														<div class="cell-1">
+															<p>Общая оценка компании</p>
+														</div>
+														<div class="cell-2">
+															<p class=yellow-tr>1.5</p>
+														</div>
+													</div>
+
+												</div>								
+
+											</div>
+
+											<div class="send-form">
+
+												<div class="inner">
+
+													<h3>Получить договор на почту</h3>
+													<input class="send-form-input" type="text" placeholder="Пожалуйста, введите e -mail">
+
+												</div>
+
+												<button type="submit" class="send-btn">Отправить</button>
+
+											</div>
+
+										</div>
+
+									</div>
 
 								</div>
 
-								<div class="yellow-tabs-block">
-									<h3>Используйте «быстрые настройки».</h3>
-									<ul class="yellow-tabs-links offset-ziro">					
-										<li><a href="#" class="active">Пользовательская</a></li>
-										<li><a href="#">Дешевая</a></li>
-										<li><a href="#">Средняя</a></li>
-										<li><a href="#">Дорогая</a></li>
-									</ul>
+								<div class="company-info-box" data-company-info-box = "company_2">
+									
+									<div class="yellow-block">
+										<p>Вернуться к заполнению страховок</p>
+										<button type="button" class="close-y-b"></button>
+									</div>
+
+									<div class="company-info-header offset-ziro">
+
+										<div class="col col-1">
+											<a href="" class="company-logo">
+												<img src="img/evrazia.png" alt="">
+											</a>
+										</div>
+
+										<div class="col col-2">
+											<p>Центральный офис</p>
+											<p class="p-1">г. Алматы, ул. Желтоксан, 59</p>
+										</div>
+
+										<div class="col col-3">
+											<p>Горячая линия</p>
+											<p class="p-1">8 800 080 0099</p>
+										</div>
+
+									</div>
+
+									<div class="company-info-content clearfix">
+
+										<div class="col-1 left">
+											
+											<ul class="mark-list">
+												<li>Собранные страховые премии (2016 г), млрд тг. - 49 млрд тг.</li>
+												<li>Позиции компании по рыночной доле - 1 из 25 <br>(среди компаний общего страхования)</li>
+												<li>Активы, млрд тг. - 202,2 млрд тг.</li>
+												<li>Позиции компании по размеру активов - 1 из 25 <br>(среди компаний общего страхования)</li>
+												<li>Выплаты / Премии, чистые - 0,41 <br> [ значение коэффициента выше среднего ]</li>
+												<li>Кредитный рейтинг от Standard & Poor's - BB+, kzAA-</li>
+												<li>Рейтинг A. M. Best <br>(кредитный рейтинг, финансовая устойчивость) - bbb+, B++</li>
+											</ul>
+
+											<div class="row-2">
+												<p>Год основания - 1995 г.</p>
+												<p>Веб-сайт - <a href="#" class="yellow-link">www.theeurasia.kz</a></p>
+											</div>
+
+										</div>
+
+										<div class="col-2 right">
+											
+											<div class="rating-table">
+
+												<div class="rating-table-header offset-ziro">
+													<div class="rating-box">
+														<div class="rating"></div>
+														<p>1.5</p>
+													</div>
+
+													<p class="p-col-2"><i class="fa fa-user" aria-hidden="true"></i> 1 оценил</p>
+
+												</div>
+
+												<div>
+
+													<div class="table-row">
+														<div class="cell-1">
+															<p>Качество сервиса</p>
+														</div>
+														<div class="cell-2">
+															<p>1.5</p>
+														</div>
+													</div>
+
+													<div class="table-row">
+														<div class="cell-1">
+															<p>Привлекательность цен</p>
+														</div>
+														<div class="cell-2">
+															<p>1.5</p>
+														</div>
+													</div>
+
+													<div class="table-row">
+														<div class="cell-1">
+															<p>Оперативность выплат</p>
+														</div>
+														<div class="cell-2">
+															<p>1.5</p>
+														</div>
+													</div>
+
+													<div class="table-row">
+														<div class="cell-1">
+															<p>Общая оценка компании</p>
+														</div>
+														<div class="cell-2">
+															<p class=yellow-tr>1.5</p>
+														</div>
+													</div>
+
+												</div>								
+
+											</div>
+
+											<div class="send-form">
+
+												<div class="inner">
+
+													<h3>Получить договор на почту</h3>
+													<input class="send-form-input" type="text" placeholder="Пожалуйста, введите e -mail">
+
+												</div>
+
+												<button type="submit" class="send-btn">Отправить</button>
+
+											</div>
+
+										</div>
+
+									</div>
+
 								</div>
 
-								<div class="form-box">								
+								<div class="company-info-box" data-company-info-box = "company_3">
+									
+									<div class="yellow-block">
+										<p>Вернуться к заполнению страховок</p>
+										<button type="button" class="close-y-b"></button>
+									</div>
 
-									<h3>Автомобиль</h3>
+									<div class="company-info-header offset-ziro">
 
-									<p>Пожалуйста, введите данные по каждому пункту для получения расчёта стоимости страховки. </p>
+										<div class="col col-1">
+											<a href="" class="company-logo">
+												<img src="img/companies/company__03.png" alt="">
+											</a>
+										</div>
 
-									<div class="selects-block">
+										<div class="col col-2">
+											<p>Центральный офис</p>
+											<p class="p-1">г. Алматы, ул. Желтоксан, 59</p>
+										</div>
+
+										<div class="col col-3">
+											<p>Горячая линия</p>
+											<p class="p-1">8 800 080 0099</p>
+										</div>
+
+									</div>
+
+									<div class="company-info-content clearfix">
+
+										<div class="col-1 left">
+											
+											<ul class="mark-list">
+												<li>Собранные страховые премии (2016 г), млрд тг. - 49 млрд тг.</li>
+												<li>Позиции компании по рыночной доле - 1 из 25 <br>(среди компаний общего страхования)</li>
+												<li>Активы, млрд тг. - 202,2 млрд тг.</li>
+												<li>Позиции компании по размеру активов - 1 из 25 <br>(среди компаний общего страхования)</li>
+												<li>Выплаты / Премии, чистые - 0,41 <br> [ значение коэффициента выше среднего ]</li>
+												<li>Кредитный рейтинг от Standard & Poor's - BB+, kzAA-</li>
+												<li>Рейтинг A. M. Best <br>(кредитный рейтинг, финансовая устойчивость) - bbb+, B++</li>
+											</ul>
+
+											<div class="row-2">
+												<p>Год основания - 1995 г.</p>
+												<p>Веб-сайт - <a href="#" class="yellow-link">www.theeurasia.kz</a></p>
+											</div>
+
+										</div>
+
+										<div class="col-2 right">
+											
+											<div class="rating-table">
+
+												<div class="rating-table-header offset-ziro">
+													<div class="rating-box">
+														<div class="rating"></div>
+														<p>1.5</p>
+													</div>
+
+													<p class="p-col-2"><i class="fa fa-user" aria-hidden="true"></i> 1 оценил</p>
+
+												</div>
+
+												<div>
+
+													<div class="table-row">
+														<div class="cell-1">
+															<p>Качество сервиса</p>
+														</div>
+														<div class="cell-2">
+															<p>1.5</p>
+														</div>
+													</div>
+
+													<div class="table-row">
+														<div class="cell-1">
+															<p>Привлекательность цен</p>
+														</div>
+														<div class="cell-2">
+															<p>1.5</p>
+														</div>
+													</div>
+
+													<div class="table-row">
+														<div class="cell-1">
+															<p>Оперативность выплат</p>
+														</div>
+														<div class="cell-2">
+															<p>1.5</p>
+														</div>
+													</div>
+
+													<div class="table-row">
+														<div class="cell-1">
+															<p>Общая оценка компании</p>
+														</div>
+														<div class="cell-2">
+															<p class=yellow-tr>1.5</p>
+														</div>
+													</div>
+
+												</div>								
+
+											</div>
+
+											<div class="send-form">
+
+												<div class="inner">
+
+													<h3>Получить договор на почту</h3>
+													<input class="send-form-input" type="text" placeholder="Пожалуйста, введите e -mail">
+
+												</div>
+
+												<button type="submit" class="send-btn">Отправить</button>
+
+											</div>
+
+										</div>
+
+									</div>
+
+								</div>
+
+								<!-- /Company Info Box -->
+
+								<div class="inner">
+									
+									<h2>Расчет стоимости<br> полиса ОГПО</h2>
+
+									<p class="h-descript">Вы можете сообщить данные по телефону: <br>8 800 080 555 7 (звонки на номер являются бесплатными), либо воспользоваться кнопкой "Заполните вместо меня".</p>
+
+									<div class="yellow-btn-big-block align-center">
+
+										<a href="#" class="yellow-btn-big"><i class="photo-icon"></i>Заполните вместо меня</a>
+
+									</div>
+
+									<div class="yellow-tabs-block">
+
+										<h3>Используйте «быстрые настройки».</h3>
+
+										<div class="yellow-tabs offset-ziro">
+
+											<input type="radio" id="tab-1" name="tabs-1" checked>
+											<label for="tab-1"><span>Пользовательская</span></label>
+
+											<input type="radio" id="tab-2" name="tabs-1">
+											<label for="tab-2"><span>Дешевая</span></label>
+
+											<input type="radio" id="tab-3" name="tabs-1">
+											<label for="tab-3"><span>Средняя</span></label>
+
+											<input type="radio" id="tab-4" name="tabs-1">
+											<label for="tab-4"><span>Дорогая</span></label>
+
+										</div>
+
+									</div>
+
+									<div class="form-box">
+
+										<h3>Автомобиль</h3>
+
+										<div class="form-row selects-block">
+
+											<div class="form-row-header">
+												<h3>Пожалуйста, введите данные по каждому пункту для получения расчёта стоимости страховки.</h3>
+											</div>
+
+											<div class="select-box">
+												<select>
+													<option>Тип транспортного средства (ТС)</option>
+													<option>Тип транспортного средства (ТС)</option>
+													<option>Тип транспортного средства (ТС)</option>
+													<option>Тип транспортного средства (ТС)</option>
+													<option>Тип транспортного средства (ТС)</option>
+												</select>
+											</div>
+
+											<div class="select-box">
+												<select class="search-false">
+													<option>Место регистрации ТС</option>
+													<option>Место регистрации ТС</option>
+													<option>Место регистрации ТС</option>
+													<option>Место регистрации ТС</option>
+													<option>Место регистрации ТС</option>
+													<option>Место регистрации ТС</option>
+												</select>
+											</div> 
+
+										</div>
+
+										<div class="form-row radio-btns-block">
+
+											<div class="form-row-header">
+												<h3>Срок эксплуатации ТС</h3>
+												<div class="question"><i class="fa fa-question-circle-o" aria-hidden="true"></i>
+													<div class="tooltip">
+														<p>Пожалуйста укажите срок эксплуатации ТС с даты выпуска</p>
+													</div>
+												</div>
+											</div>
+											<div class="offset-ziro">
+												<div class="radio-box">
+													<input type="radio" name="radio_1" id="radio_1_1" checked>
+													<label for="radio_1_1">До 7 лет включительно</label>
+												</div>
+
+												<div class="radio-box">
+													<input type="radio" name="radio_1" id="radio_1_2">
+													<label for="radio_1_2">Свыше 7 лет</label>
+												</div>
+											</div>
+
+										</div>
+
+										<div class="form-row radio-btns-block">
+
+											<div class="form-row-header">
+												<h3 class="red-txt">Статус города регистрации ТС</h3>
+												<div class="question"><i class="fa fa-question-circle-o" aria-hidden="true"></i>
+													<div class="tooltip">
+														<p>Также известно как тип территории регистрации ТС</p>
+													</div>
+												</div>
+											</div>
+											<div class="offset-ziro">
+												<div class="radio-box">
+													<input type="radio" name="radio_2" id="radio_2_1">
+													<label for="radio_2_1">Столица, город республиканского<br> либо областного значения</label>
+												</div>
+
+												<div class="radio-box">
+													<input type="radio" name="radio_2" id="radio_2_2">
+													<label for="radio_2_2">Иные города и населенные пункты</label>
+												</div>
+											</div>
+										</div>
+
+										<div class="form-row radio-btns-block">
+
+											<div class="form-row-header">
+												<h3>Пожалуйста, введите ИИН, чтобы узнать свой "Бонус-малус"</h3>
+												<div class="question"><i class="fa fa-question-circle-o" aria-hidden="true"></i>
+													<div class="tooltip">
+														<p>Пожалуйста, введите ИИН, чтобы узнать свой "Бонус-малус"</p>
+													</div>
+												</div>
+											</div>
+
+											<div class="input-box">
+												<input type="text" placeholder="Введите ИИН">
+												<div class="hidden-box offset-ziro">
+													<p>Арман Бакитжанович Касенов</p>
+													<p>Ваш бонус-малус: 13</p>
+												</div>
+											</div>
+
+										</div>
+
+									</div>
+
+									<div class="form-box">
+
+										<h3>Срок страховки</h3>
 
 										<div class="select-box">
-											<select>
-												<option>Тип транспортного средства (ТС)</option>
-												<option>Тип транспортного средства (ТС)</option>
-												<option>Тип транспортного средства (ТС)</option>
-												<option>Тип транспортного средства (ТС)</option>
-												<option>Тип транспортного средства (ТС)</option>
+											<select class="search-false">
+												<option>Срок 1</option>
+												<option>Срок 2</option>
+												<option>Срок 3</option>
+												<option>Срок 4</option>
+												<option>Срок 5</option>
+												<option>Срок 6</option>
 											</select>
-										</div>
-
-										<div class="select-box">
-											<select>
-												<option>Место регистрации ТС</option>
-												<option>Место регистрации ТС</option>
-												<option>Место регистрации ТС</option>
-												<option>Место регистрации ТС</option>
-												<option>Место регистрации ТС</option>
-												<option>Место регистрации ТС</option>
-											</select>
-										</div>
+										</div> 
 
 									</div>
 
-									<div class="radio-btns-block">
+									<div class="form-box two-cols offset-ziro">
 
-										<h3>Срок эксплуатации ТС <i class="fa fa-question-circle-o" aria-hidden="true"></i></h3>
-										<div class="offset-ziro">
-											<div class="radio-box">
-												<input type="radio" name="radio_1" id="radio_1_1" checked>
-												<label for="radio_1_1">До 7 лет включительно</label>
-											</div>
-
-											<div class="radio-box">
-												<input type="radio" name="radio_1" id="radio_1_2">
-												<label for="radio_1_2">Свыше 7 лет</label>
+										<div class="col col-1">
+											<h3>Дата начала действия страхового продукта</h3>
+											<div class="input-box">
+												<div class="datepiker-range">
+													<input type='text' class="datepicker-input datepicker-here" data-date-format="dd.mm.yyyy"/>
+												</div>
 											</div>
 										</div>
-									</div>
 
-									<div class="radio-btns-block">
-
-										<h3 class="red-txt">Статус города регистрации ТС <i class="fa fa-question-circle-o" aria-hidden="true"></i></h3>
-										<div class="offset-ziro">
-											<div class="radio-box">
-												<input type="radio" name="radio_2" id="radio_2_1">
-												<label for="radio_2_1">Столица, город республиканского<br> либо областного значения</label>
-											</div>
-
-											<div class="radio-box">
-												<input type="radio" name="radio_2" id="radio_2_2">
-												<label for="radio_2_2">Иные города и населенные пункты</label>
-											</div>
+										<div class="col col-2">
+											<h3>Дата окончания действия страхового продукта</h3>
+											<h3><b>15 октября 2017</b></h3>
 										</div>
+
 									</div>
 
 								</div>
 
-							</div>
+								<div class="inner blue-bg btns-two-cols offset-ziro">
 
-							<div class="inner blue-bg btns-two-cols offset-ziro">
+									<div class="btns-block align-center">
+										<a href="#" class="dashed-pill">Не сохранять ( удалить заказ )</a>
+									</div>
 
-								<div class="btns-block">
-									<button type="button" class="dashed-btn">Не сохранять ( удалить заказ )</button>
 								</div>
 
 							</div>
 
 						</div>
 
-						<div class="sidebar right">
-							
+						<button type="button" class="show_menu">
+							<i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
+						</button>
+
+						<div class="sidebar right scroll">
+						
 							<div class="sidebar-header">
 
 								<div class="two-cols-block conpany-offer">
@@ -282,11 +783,18 @@
 								</div>
 
 								<div class="yellow-tabs-block">
-									<ul class="yellow-tabs-links offset-ziro">
-										<li><a href="#" class="active">По цене</a></li>
-										<li><a href="#">По алфавиту</a></li>
-										<li><a href="#">По рейтингу</a></li>
-									</ul>
+									<div class="yellow-tabs sidebar-tabs offset-ziro">
+
+										<input type="radio" id="tab-5" name="tabs-2" checked>
+										<label for="tab-5"><span>По цене</span></label>
+
+										<input type="radio" id="tab-6" name="tabs-2">
+										<label for="tab-6"><span>По алфавиту</span></label>
+
+										<input type="radio" id="tab-7" name="tabs-2">
+										<label for="tab-7"><span>По рейтингу</span></label>
+
+									</div>
 								</div>
 
 							</div>
@@ -302,9 +810,9 @@
 										</a>
 									</div>
 									<div class="col col-2">
-										<a href="#" class="company-logo"><img src="img/companies/company__01.png" alt=""></a>
-										<div class="rating">
-											<img src="img/ratings.jpg" alt="">
+										<a href="#" class="company-logo company_rate" data-company = "company_1"><img src="img/companies/company__01.png" alt=""></a>
+										<div class="rating-box">
+											<div class="rating"></div>
 										</div>
 									</div>
 								</div>
@@ -318,9 +826,9 @@
 										</a>
 									</div>
 									<div class="col col-2">
-										<a href="#" class="company-logo"><img src="img/companies/company__02.png" alt=""></a>
-										<div class="rating">
-											<img src="img/ratings.jpg" alt="">
+										<a href="#" class="company-logo company_rate" data-company = "company_2"><img src="img/companies/company__02.png" alt=""></a>
+										<div class="rating-box">
+											<div class="rating"></div>
 										</div>
 									</div>
 								</div>
@@ -334,9 +842,9 @@
 										</a>
 									</div>
 									<div class="col col-2">
-										<a href="#" class="company-logo"><img src="img/companies/company__03.png" alt=""></a>
-										<div class="rating">
-											<img src="img/ratings.jpg" alt="">
+										<a href="#" class="company-logo company_rate" data-company = "company_3"><img src="img/companies/company__03.png" alt=""></a>
+										<div class="rating-box">
+											<div class="rating"></div>
 										</div>
 									</div>
 								</div>

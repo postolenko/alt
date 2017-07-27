@@ -1059,7 +1059,6 @@ p.shape span {
 .promo-section:before {
     display: block;
     content: "";
-    /*background: rgba(0, 0, 0, .4);*/
     background: #0d1823;
     opacity: .68;
     position: absolute;
@@ -1905,8 +1904,13 @@ p.shape span {
 }
 
 .main-content {
-    width: 67%;
-    padding: 70px 0 0 0;
+    width: 69%;
+    padding: 0 2% 0 0;
+    position: relative;
+}
+
+.main-content-inner {
+    padding-top: 70px;
     background: rgb(255, 255, 255);
     -webkit-box-shadow: 0px 8px 46px 0px rgba(175, 198, 217, 0.35);
     -moz-box-shadow: 0px 8px 46px 0px rgba(175, 198, 217, 0.35);
@@ -1922,9 +1926,20 @@ p.shape span {
     background: rgb(249, 250, 251);
 }
 
+.main-content.single {
+    float: none;
+    margin: 0 auto;
+}
+
+.main-content.single .inner {
+    padding: 10px 4%;
+}
+
 .sidebar {
     width: 31%;
-    padding: 108px 3% 116px 3%;
+    min-width: 320px;
+    max-height: auto;
+    padding: 108px 0 116px 0;
     -webkit-border-radius: 0 0 34px 34px;
     -moz-border-radius: 0 0 34px 34px;
     -ms-border-radius: 0 0 34px 34px;
@@ -1935,6 +1950,96 @@ p.shape span {
     -moz-box-shadow: 0px 8px 46px 0px rgba(175, 198, 217, 0.35);
     -ms-box-shadow: 0px 8px 46px 0px rgba(175, 198, 217, 0.35);
     box-shadow: 0px 8px 46px 0px rgba(175, 198, 217, 0.35);
+}
+
+.show_menu {
+    /*display: block;*/
+    display: none;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    overflow: hidden;
+    position: fixed;
+    top: 44%;
+    right: 2%;
+    z-index: 15;
+    opacity: .5;
+    border: 1px solid transparent;
+    background: transparent;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+
+    -webkit-transition-property: transform, opacity;
+    -webkit-transition-duration: .3s;
+    -webkit-transition-timing-function: ease;
+
+    -moz-transition-property: transform, opacity;
+    -moz-transition-duration: .3s;
+    -moz-transition-timing-function: ease;
+
+    -ms-transition-property: transform, opacity;
+    -ms-transition-duration: .3s;
+    -ms-transition-timing-function: ease;
+
+    -o-transition-property: transform, opacity;
+    -o-transition-duration: .3s;
+    -o-transition-timing-function: ease;
+
+    transition-property: transform, opacity;
+    transition-duration: .3s;
+    transition-timing-function: ease;
+}
+
+.show_menu:hover {
+    opacity: 1;
+}
+
+.show_menu.active {
+    -webkit-transform: rotate(-180deg);
+    -moz-transform: rotate(-180deg);
+    -o-transform: rotate(-180deg);
+    transform: rotate(-180deg);
+}
+
+.show_menu .fa {
+    font-size: 57px;
+    line-height: 58px;
+    color: #2c3e50;
+}
+
+.bottom_sidebar_coor {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: block;
+    width: 1px;
+    height: 1px;
+    background: transparent;
+}
+
+.left_sidebar_coor {
+    position: absolute;
+    top: 200px;
+    right: 0;
+    display: block;
+    width: 1px;
+    height: 1px;
+    background: transparent;
+}
+
+.sidebar.fixed_position {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+
+.sidebar.fixed_position_small {
+    position: fixed;
+    top: 0;
+    right: 0;
 }
 
 /*-- /Two Cols Content Template --*/
@@ -2053,70 +2158,101 @@ p.shape span {
     color: #243746;
 }
 
-.yellow-tabs-links {
+.yellow-tabs {    
+    display: table;
+    width: 100%;
     margin: 10px 0;
     text-align: center;
-}
-
-.yellow-tabs-links li {
-    display: inline-block;
-    vertical-align: top;
-}
-
-.yellow-tabs-links li a {
-    display: block;
-    width: 196px;
-    padding: 12px 2%;
-    font-family: "Avenir Next", Arial, Verdana, sans-serif;
-    font-size: 18px;
-    line-height: 24px;
-    font-weight: bold;
-    color: #243746;
-    text-align: center;
-    border: 1px solid #d6e2e8;
-    background: rgb(255, 255, 255);
+    border-collapse: collapse;
+    position: relative;
+    /*overflow: hidden;*/
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     -ms-border-radius: 4px;
     -o-border-radius: 4px;
     border-radius: 4px;
+    border: 1px solid #d6e2e8;
+    flex-direction: row-reverse;
+}
 
-    -webkit-transition-property: border, background;
+.yellow-tabs input[type="radio"] {
+    display: block;
+    width: 1px;
+    height: 1px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    opacity: .01;
+}
+
+.yellow-tabs label {
+    display: table-cell;
+    vertical-align: middle;
+    width: 25%;
+    padding: 12px 2%;
+    cursor: pointer;
+    position: relative;
+    border: 1px solid #d6e2e8;
+    background: rgb(255, 255, 255);
+    text-align: center;
+
+    -webkit-transition-property: background;
     -webkit-transition-duration: .3s;
     -webkit-transition-timing-function: ease;
 
-    -moz-transition-property: border, background;
+    -moz-transition-property: background;
     -moz-transition-duration: .3s;
     -moz-transition-timing-function: ease;
 
-    -ms-transition-property: border, background;
+    -ms-transition-property: background;
     -ms-transition-duration: .3s;
     -ms-transition-timing-function: ease;
 
-    -o-transition-property: border, background;
+    -o-transition-property: background;
     -o-transition-duration: .3s;
     -o-transition-timing-function: ease;
 
-    transition-property: border, background;
+    transition-property: background;
     transition-duration: .3s;
     transition-timing-function: ease;
 }
 
-.yellow-tabs-links li a:link,
-.yellow-tabs-links li a:visited {
-    border: 1px solid #d6e2e8;
-    background: rgb(255, 255, 255);
+.yellow-tabs label span {
+    font-family: "Avenir Next", Arial, Verdana, sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: bold;
+    color: #243746;
+    position: relative;
+    z-index: 2;
 }
 
-.yellow-tabs-links li a.active,
-.yellow-tabs-links li a:active {
-    background: rgb(251, 198, 35);
-    border: 1px solid rgb(251, 198, 35);
+.yellow-tabs input[type="radio"]:checked + label {
+    border: 1px solid transparent;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    border-radius: 4px;
+    z-index: 2;
 }
 
-.yellow-tabs-links li a:hover {
+.yellow-tabs input[type="radio"]:checked + label:before {
+    display: block;
+    content: "";
+    width: 102%;
+    height: 100%;
+    position: absolute;
+    top: -1px;
+    left: -1%;
     background: rgb(251, 198, 35);
     border: 1px solid rgb(251, 198, 35);
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    border-radius: 4px;
 }
 
 .form-box {
@@ -2129,7 +2265,8 @@ p.shape span {
     line-height: 29px;
     font-weight: normal;
     color: #243746;
-    padding: 22px 0;
+    /*padding: 22px 0;*/
+    padding: 22px 0 32px 0;
 }
 
 .form-box p {
@@ -2141,11 +2278,20 @@ p.shape span {
 }
 
 .selects-block {
-    padding: 39px 0 10px 0;
+    /*padding: 39px 0 10px 0;*/
 }
 
 .select-box {
-    padding: 18px 0;
+    padding: 16px 0;
+    cursor: pointer !important;
+}
+
+.select-box:hover {
+    cursor: pointer !important;
+}
+
+.select-box .select2 {
+    cursor: pointer !important;
 }
 
 .radio-box {
@@ -2163,7 +2309,7 @@ p.shape span {
 .radio-box label {
     display: inline-table;
     vertical-align: top;
-    width: 100%;
+    /*width: 100%;*/
     font-family: "Avenir Next", Arial, Verdana, sans-serif;
     font-size: 20px;
     line-height: 29px;
@@ -2178,7 +2324,7 @@ p.shape span {
     vertical-align: top;
     content: "";
     width: 53px;
-    height: auto;
+    height: 40px;
     background-image: url(../img/radiobtn_sprite.png);
     background-position: -84px -2px;
     background-repeat: no-repeat;
@@ -2188,113 +2334,331 @@ p.shape span {
     background-position: -7px -2px;
 }
 
-.radio-btns-block h3 {
+.form-row-header {
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+}
+
+.form-row h3 {
+    display: inline-block;
+    vertical-align: middle;
     font-family: "Avenir Next", Arial, Verdana, sans-serif;
     font-size: 18px;
     line-height: 22px;
     font-weight: normal;
-    color: #243746;
+    color: #243746;    
+    padding: 0 0 10px 0;
 }
 
-.radio-btns-block {
-    margin: 0 0 37px 0;
+.form-row .question {
+    display: inline-block;
+    vertical-align: middle;
 }
 
-.radio-btns-block h3.red-txt {
+.form-row {
+    margin: 0 0 48px 0;
+}
+
+.form-row h3.red-txt {
     color: #ed1c24;
 }
 
-.radio-btns-block h3 i {
+.form-row .question i {
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
     font-size: 23px;
     line-height: 23px;
     color: #778996;
     position: relative;
-    top: 1px;
+    top: -7px;
     margin: 0 0 0 6px;
+
+     -webkit-transition-property: color;
+    -webkit-transition-duration: .3s;
+    -webkit-transition-timing-function: ease;
+
+    -moz-transition-property: color;
+    -moz-transition-duration: .3s;
+    -moz-transition-timing-function: ease;
+
+    -ms-transition-property: color;
+    -ms-transition-duration: .3s;
+    -ms-transition-timing-function: ease;
+
+    -o-transition-property: color;
+    -o-transition-duration: .3s;
+    -o-transition-timing-function: ease;
+
+    transition-property: color;
+    transition-duration: .3s;
+    transition-timing-function: ease;
 }
 
-.radio-btns-block .radio-box {
+.form-row .question i:hover {
+    color: #fbc623;
+}
+
+.tooltip {
+    display: none;
+    width: 290px;
+    position: absolute;
+    top: -100%;
+    left: 70%;
+    padding: 14px 12px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    border-radius: 4px;
+    background: rgb(240, 240, 240);
+    -webkit-box-shadow: 0px 2px 8px 0px rgba(0,0,0,0.4);
+    -moz-box-shadow: 0px 2px 8px 0px rgba(0,0,0,0.4);
+    box-shadow: 0px 2px 8px 0px rgba(0,0,0,0.4);
+
+    -webkit-transition-property: width;
+    -webkit-transition-duration: .3s;
+    -webkit-transition-timing-function: ease;
+
+    -moz-transition-property: width;
+    -moz-transition-duration: .3s;
+    -moz-transition-timing-function: ease;
+
+    -ms-transition-property: width;
+    -ms-transition-duration: .3s;
+    -ms-transition-timing-function: ease;
+
+    -o-transition-property: width;
+    -o-transition-duration: .3s;
+    -o-transition-timing-function: ease;
+
+    transition-property: width;
+    transition-duration: .3s;
+    transition-timing-function: ease;
+}
+
+.question:hover .tooltip {
+    display: block;
+}
+
+.tooltip p {
+    font-family: "Avenir Next", Arial, Verdana, sans-serif;
+    font-size: 16px;
+    line-height: 23px;
+    font-weight: normal;
+    font-style: italic;
+    color: #243746;
+}
+
+.form-row .radio-box {
     display: inline-block;
     vertical-align: top;
     width: 50%;
     margin: 9px 0;
 }
 
-.dashed-btn {
+.input-box {
+    margin: 12px 0;
+}
+
+.input-box input {
+    display: block;
+    width: 100%;
+    border: 2px solid #aaaaaa;
+    height: 70px;
+    padding: 10px 20px;
+    font-family: "Avenir Next", Arial, Verdana, sans-serif;
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: bold;
+    color: #44596b;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    border-radius: 4px;
+}
+
+.hidden-box {
+    background: #f2f4f4;
+    padding: 48px 4% 33px 4%;
+    position: relative;
+    top: -12px;
+}
+
+.hidden-box:before {
+    display: block;
+    content: "";
+    width: 100%;
+    height: 15px;
+    background: #fbc623;
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-border-radius: 0 0 4px 4px;
+    -moz-border-radius: 0 0 4px 4px;
+    -ms-border-radius: 0 0 4px 4px;
+    -o-border-radius: 0 0 4px 4px;
+    border-radius: 0 0 4px 4px;
+}
+
+.hidden-box p {
+    display: inline-block;
+    vertical-align: top;
+    width: 60%;
+    font-family: "Avenir Next", Arial, Verdana, sans-serif;
+    font-size: 24px;
+    line-height: 28px;
+    font-weight: normal;
+    color: #44596b;
+}
+
+.hidden-box p:nth-child(2) {
+    display: inline-block;
+    vertical-align: top;
+    width: 40%;
+}
+
+.form-box.two-cols {
+    padding: 45px 0;
+}
+
+.form-box.two-cols .col {
+    display: inline-block;
+    vertical-align: top;
+    width: 50%;
+}
+
+.form-box.two-cols .col-1 {
+    width: 60%;
+    padding: 0 8% 0 0;
+}
+
+.form-box.two-cols .col-2 {
+    width: 40%;
+}
+
+.datepiker-range {
+    max-width: 347px;
+    position: relative;
+}
+
+.datepiker-range:after {
+    display: block;
+    content: "";
+    width: 35px;
+    height: 37px;
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    background-image: url(../img/datepicker_icon.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.datepicker-input:active {
+    border: 2px solid #fbc623;
+}
+
+.datepicker-input:focus {
+    border: 2px solid #fbc623;
+    -webkit-box-shadow: 0px 7px 8px 0px rgba(0, 0, 0, .2);
+    -moz-box-shadow: 0px 7px 8px 0px rgba(0, 0, 0, .2);
+    box-shadow: 0px 7px 8px 0px rgba(0, 0, 0, .2);
+}
+
+.dashed-pill {
     display: inline-block;
     vertical-align: top;
     cursor: pointer;
-    min-width: 394px;
-    margin: 10px 1%;
-    padding: 17px 2%;
+    margin: 10px 2%;
+    padding: 17px 22px;
     font-family: "Avenir Next", Arial, Verdana, sans-serif;
     font-size: 22px;
     line-height: 33px;
     font-weight: normal;
     color: #243746;
     border: 2px dashed #b9c2d0;
-    background: rgba(185, 194, 208, 0);
+    background: transparent;
     -webkit-border-radius: 8px;
     -moz-border-radius: 8px;
     -ms-border-radius: 8px;
     -o-border-radius: 8px;
     border-radius: 8px;
 
-    -webkit-transition-property: border, background;
+    -webkit-transition-property: border;
     -webkit-transition-duration: .3s;
     -webkit-transition-timing-function: ease;
 
-    -moz-transition-property: border, background;
+    -moz-transition-property: border;
     -moz-transition-duration: .3s;
     -moz-transition-timing-function: ease;
 
-    -ms-transition-property: border, background;
+    -ms-transition-property: border;
     -ms-transition-duration: .3s;
     -ms-transition-timing-function: ease;
 
-    -o-transition-property: border, background;
+    -o-transition-property: border;
     -o-transition-duration: .3s;
     -o-transition-timing-function: ease;
 
-    transition-property: border, background;
+    transition-property: border;
     transition-duration: .3s;
     transition-timing-function: ease;
 }
 
-.dashed-btn:link,
-.dashed-btn:visited {
+.dashed-pill:link,
+.dashed-pill:visited {
     border: 2px dashed #b9c2d0;
-    background: rgba(185, 194, 208, 0);
 }
 
-.dashed-btn.active,
-.dashed-btn:active {
-    background: rgba(185, 194, 308, 1);
-    border: 2px solid #b9c2d0;
+.dashed-pill.active,
+.dashed-pill:active {
+    border: 2px dashed #fbc623;
 }
 
-.dashed-btn:hover {
-    background: rgba(185, 194, 308, 1);
-    border: 2px solid #b9c2d0;
+.dashed-pill:hover {
+    border: 2px dashed #fbc623;
 }
 
-.btns-two-cols button {
+.btns-two-cols a {
     width: 48%;
     min-width: auto;
 }
 
-.btns-two-cols button:nth-child(n+1) {
+.btns-two-cols a:nth-child(n+1) {
     margin: 10px 2% 10px 0;
 }
 
-.btns-two-cols button:nth-child(2n) {
+.btns-two-cols a:nth-child(2n) {
     margin: 10px 0 10px 2%;
 }
+
+.btns-three-cols {
+    overflow: hidden;
+}
+
+.btns-three-cols .btns-block {
+    width: 104%;
+    margin: 0 0 0 -2%;
+}
+
+.btns-three-cols a {
+    width: 29%;
+    margin: 10px 2%;
+    padding: 17px 1%;
+    font-size: 19px;
+}
+
+
 
 /*-- Sidebar --*/
 
 .sidebar-header {
-
+    padding-left: 10%;
+    padding-right: 10%;
 }
 
 .two-cols-block.conpany-offer {
@@ -2338,13 +2702,8 @@ p.shape span {
     padding: 0;
 }
 
-.sidebar .yellow-tabs-links li {
-    width: 33%;
-    min-width: 128px;
-}
-
-.sidebar .yellow-tabs-links li a {
-    width: 100%;
+.sidebar .yellow-tabs label {
+    width: 33.33%;
 }
 
 .sidebar-content {
@@ -2354,7 +2713,16 @@ p.shape span {
 .company-item {
     display: table;
     width: 100%;
-    padding: 12px 0 18px 0;
+    padding: 12px 10% 18px 10%;
+    border-bottom: 1px solid #d0dff0;
+}
+
+.company-item:nth-child(2n) {
+    background: #f2f4f4;
+}
+
+.company-item:last-child {
+    border-bottom: none;
 }
 
 .company-item .col {
@@ -2368,8 +2736,9 @@ p.shape span {
 
 .company-item .col-2 {
     width: 40%;
-    padding: 5px 0 0 0;
+    padding: 5px 0 16px 0;
     text-align: right;
+    position: relative;
 }
 
 .company-item .offer-price {
@@ -2392,11 +2761,642 @@ p.shape span {
     font-weight: bold;
 }
 
-/*-- Sidebar --*/
+.company_rate {
+    display: inline-block;
+    vertical-align: top;
+    width: auto;
+}
 
-/*-- Section 1 Osago Description Page --*/
+.company_rate img {
+    display: block;
+    width: auto;
+    max-width: 90%;
+}
+
+.rating-box {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+/*-- /Sidebar --*/
+
+/*-- /Section 1 Osago Description Page --*/
+
+/*-- Company Info Box --*/
+
+.company-info-box {
+    width: 100%;
+    position: absolute;
+    /*top: 0;*/
+    top: -100%;
+    left: 0;
+    z-index: 3;
+    background: #ffffff;
+    padding: 0 0 30px 0;
+    -webkit-border-radius: 0 0 17px 17px;
+    -moz-border-radius: 0 0 17px 17px;
+    -ms-border-radius: 0 0 17px 17px;
+    -o-border-radius: 0 0 17px 17px;
+    border-radius: 0 0 17px 17px;
+    -webkit-box-shadow: 0px 8px 46px 0px rgba(175, 198, 217, 0.35);
+    -moz-box-shadow: 0px 8px 46px 0px rgba(175, 198, 217, 0.35);
+    -ms-box-shadow: 0px 8px 46px 0px rgba(175, 198, 217, 0.35);
+    box-shadow: 0px 8px 46px 0px rgba(175, 198, 217, 0.35);
+}
+
+.yellow-block {
+    background: #fbc623;
+    text-align: right;
+    cursor: pointer;
+    padding: 22px 5%;
+
+    -webkit-transition-property: background;
+    -webkit-transition-duration: .3s;
+    -webkit-transition-timing-function: ease;
+
+    -moz-transition-property: background;
+    -moz-transition-duration: .3s;
+    -moz-transition-timing-function: ease;
+
+    -ms-transition-property: background;
+    -ms-transition-duration: .3s;
+    -ms-transition-timing-function: ease;
+
+    -o-transition-property: background;
+    -o-transition-duration: .3s;
+    -o-transition-timing-function: ease;
+
+    transition-property: background;
+    transition-duration: .3s;
+    transition-timing-function: ease;
+}
+
+.yellow-block:hover {
+    background: #fbce44;
+}
+
+.yellow-block p {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0 6% 0 0;
+    font-family: "Avenir Next", Arial, Verdana, sans-serif;
+    font-size: 22px;
+    line-height: 30px;
+    font-weight: normal;
+    color: #243746;
+}
+
+.close-y-b {
+    display: inline-block;
+    vertical-align: middle;
+    width: 34px;
+    height: 34px;
+    overflow: hidden;
+    cursor: pointer;
+    border: 1px solid transparent;
+    background: transparent;
+}
+
+.close-y-b:after {
+    display: block;
+    content: "\2716";
+    position: relative;
+    top: -2px;
+    font-family: "Avenir Next", Arial, Verdana, sans-serif;
+    font-size: 38px;
+    line-height: 39px;
+    font-weight: bold;
+    color: #243746;
+}
+
+a.yellow-block {
+    display: block;
+    width: 100%;
+    text-align: left;
+    margin: -75px 0 0 0;
+    padding: 18px 5%;
+}
+
+a.yellow-block i {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 58px;
+    line-height: 58px;
+    color: #243746;
+    position: relative;
+    top: -3px;
+    margin: 0 11px 0 0;
+}
+
+.company-info-header {
+    background: #f2f4f4;
+    border-bottom: 1px solid #d6e2e8;
+    padding: 19px 5% 28px 5%;
+}
+
+.company-info-header .col {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 15px 1% 15px 0;
+}
+
+.company-info-header .col-1 {
+    width: 43%;
+}
+
+.company-info-header .col-2 {
+    width: 33%;
+}
+
+.company-info-header .col-3 {
+    width: 24%;
+}
+
+.company-info-header .company-logo {
+    display: inline-block;
+    vertical-align: top;
+    width: auto;
+    height: auto;
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.company-info-header .company-logo img {
+    display: block;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+}
+
+.company-info-header p {
+    font-family: "Avenir Next", Arial, Verdana, sans-serif;
+    font-size: 18px;
+    line-height: 26px;
+    font-weight: normal;
+    color: #44596b;
+    padding: 2px 0;
+}
+
+.company-info-header p.p-1 {
+    font-family: "Avenir Next", Arial, Verdana, sans-serif;
+    font-size: 18px;
+    line-height: 26px;
+    font-weight: bold;
+    color: #44596b;
+    padding: 2px 0;
+}
+
+.company-info-content {
+    padding: 27px 5%;
+}
+
+.company-info-content  .col-1 {
+    width: 58%;
+    padding: 0 2% 0 0;
+}
+
+.company-info-content  .col-2 {
+    width: 42%;
+}
+
+ul.mark-list li {
+    display: table;
+    width: 100%;
+    font-family: "Avenir Next", Arial, Verdana, sans-serif;
+    font-size: 18px;
+    line-height: 25px;
+    font-weight: normal;
+    color: #243746;
+    padding: 14px 0;
+}
+
+ul.mark-list li:before {
+    display: table-cell;
+    vertical-align: top;
+    width: 36px;
+    content: "\220E";
+    font-family: "Avenir Next", Arial, Verdana, sans-serif;
+    font-size: 18px;
+    line-height: 25px;
+    font-weight: normal;
+    color: #243746;
+}
+
+.company-info-content .row-2 {
+    padding: 52px 0 20px 0;
+}
+
+.company-info-content .row-2 p {
+    font-family: "Avenir Next", Arial, Verdana, sans-serif;
+    font-size: 18px;
+    line-height: 26px;
+    font-weight: normal;
+    color: #243746;
+}
+
+.yellow-link {
+    display: inline-block;
+    vertical-align: top;
+    font-family: "Avenir Next", Arial, Verdana, sans-serif;
+    font-size: 18px;
+    line-height: 18px;
+    font-weight: normal;
+    color: #fbc623;
+    padding: 4px 0;
+    border-bottom: 1px solid transparent;
+    -webkit-transition-property: border-bottom;
+    -webkit-transition-duration: .3s;
+    -webkit-transition-timing-function: ease;
+
+    -moz-transition-property: border-bottom;
+    -moz-transition-duration: .3s;
+    -moz-transition-timing-function: ease;
+
+    -ms-transition-property: border-bottom;
+    -ms-transition-duration: .3s;
+    -ms-transition-timing-function: ease;
+
+    -o-transition-property: border-bottom;
+    -o-transition-duration: .3s;
+    -o-transition-timing-function: ease;
+
+    transition-property: border-bottom;
+    transition-duration: .3s;
+    transition-timing-function: ease;
+}
+
+.yellow-link:hover {
+    border-bottom: 1px solid #fbce44;
+}
+
+.rating-table {
+    border: 1px solid #d6e2e8;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    border-radius: 8px;
+    margin: 18px 0;
+    padding: 10px 0 4px 0;
+}
+
+.rating-table-header {
+    padding: 26px 5%;
+}
+
+.rating-table-header .rating-box {
+    display: inline-block;
+    vertical-align: middle;
+    width: 50%;
+    position: relative;
+}
+
+.rating-box .rating {
+    display: inline-block;
+    vertical-align: middle;
+    top: -2px;
+}
+
+.rating-box p {
+    display: inline-block;
+    vertical-align: middle;
+    font-family: "Avenir Next", Arial, Verdana, sans-serif;
+    font-size: 15px;
+    line-height: 18px;
+    font-weight: normal;
+    color: #44596b;
+}
+
+.p-col-2 {
+    display: inline-block;
+    vertical-align: middle;
+    width: 50%;
+}
+
+.rating-table-header p {
+    font-family: "Avenir Next", Arial, Verdana, sans-serif;
+    font-size: 15px;
+    line-height: 18px;
+    font-weight: normal;
+    color: #44596b;
+}
+
+.rating-table-header .fa-user {
+    font-size: 15px;
+    line-height: 17px;
+    color: #cdd2d7;
+    margin: 0 3px 0 0;
+}
+
+.rating-table .table-row {
+    display: table;
+    width: 100%;
+    padding: 3px 0 3px 5%;
+    background: #ffffff;
+}
+
+.rating-table .table-row:nth-child(odd) {
+    background: #f2f4f4;
+}
+
+.rating-table .cell-1 {
+    display: table-cell;
+    vertical-align: top;
+    width: 70%;
+    padding: 3px 0;
+}
+
+.rating-table .cell-2 {
+    display: table-cell;
+    vertical-align: top;
+    width: 30%;
+    padding: 3px 0;
+    text-align: right;
+}
+
+.rating-table .cell-1 p {
+    font-family: "Avenir Next", Arial, Verdana, sans-serif;
+    font-size: 18px;
+    line-height: 31px;
+    font-weight: normal;
+    color: #243746;
+}
+
+.rating-table .cell-2 p {
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+    max-width: 64px;
+    padding: 0 0 0 9px;
+    text-align: left;
+    font-family: "Avenir Next", Arial, Verdana, sans-serif;
+    font-size: 18px;
+    line-height: 31px;
+    font-weight: bold;
+    color: #243746;
+}
+
+.rating-table .cell-2 p.yellow-tr {
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+    max-width: 64px;
+    position: relative;
+    background: #fbc623;
+    font-family: "Avenir Next", Arial, Verdana, sans-serif;
+    font-size: 18px;
+    line-height: 31px;
+    font-weight: bold;
+    color: #243746;
+}
+
+.rating-table .cell-2 p.yellow-tr:before {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -13px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 15px 13px 15px 0;
+    border-color: transparent #fbc523 transparent transparent;
+}
+
+.send-form {
+    margin: 45px 0;
+}
+
+.send-form .inner {
+    border: 1px solid #d6e2e8;
+    border-bottom: none;
+    -webkit-border-radius: 8px 8px 0 0;
+    -moz-border-radius: 8px 8px 0 0;
+    -ms-border-radius: 8px 8px 0 0;
+    -o-border-radius: 8px 8px 0 0;
+    border-radius: 8px 8px 0 0;
+    padding: 10px 0 4px 0;
+    text-align: center;
+}
+
+.send-form h3 {
+    padding: 15px 0;
+    font-family: "Avenir Next", Arial, Verdana, sans-serif;
+    font-size: 23px;
+    line-height: 33px;
+    font-weight: bold;
+    color: #243746;
+}
+
+.send-form-input {
+    display: block;
+    width: 90%;
+    margin: 13px auto 38px auto;
+    padding: 18px 2%;
+    text-align: center;
+    border: 2px solid #b9c2d0;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    border-radius: 8px;
+    font-family: "Avenir Next", Arial, Verdana, sans-serif;
+    font-size: 20px;
+    line-height: 33px;
+    font-weight: bold;
+    color: #243746;
+}
+
+.send-form .send-btn {
+    display: block;
+    width: 100%;
+    border: 1px solid #fbc623;
+    background: #fbc623;
+    padding: 10px 1%;
+    cursor: pointer;
+    font-family: "Avenir Next", Arial, Verdana, sans-serif;
+    font-size: 18px;
+    line-height: 33px;
+    font-weight: bold;
+    color: #000000;
+    -webkit-border-radius: 0 0 8px 8px;
+    -moz-border-radius: 0 0 8px 8px;
+    -ms-border-radius: 0 0 8px 8px;
+    -o-border-radius: 0 0 8px 8px;
+    border-radius: 0 0 8px 8px;
+
+    -webkit-transition-property: box-shadow;
+    -webkit-transition-duration: .3s;
+    -webkit-transition-timing-function: ease;
+
+    -moz-transition-property: box-shadow;
+    -moz-transition-duration: .3s;
+    -moz-transition-timing-function: ease;
+
+    -ms-transition-property: box-shadow;
+    -ms-transition-duration: .3s;
+    -ms-transition-timing-function: ease;
+
+    -o-transition-property: box-shadow;
+    -o-transition-duration: .3s;
+    -o-transition-timing-function: ease;
+
+    transition-property: box-shadow;
+    transition-duration: .3s;
+    transition-timing-function: ease;
+}
+
+.send-form .send-btn:hover {
+    -webkit-box-shadow: 0px 0px 17px 0px rgba(251,197,35,0.9);
+    -moz-box-shadow: 0px 0px 17px 0px rgba(251,197,35,0.9);
+    box-shadow: 0px 0px 17px 0px rgba(251,197,35,0.9);
+}
+
+
+/*-- /Company Info Box --*/
 
 /*-- /Inner Page --*/
+
+/*-- Section 1 Page 04 --*/
+
+.payments-btns {
+    overflow: hidden;
+    margin: 50px 0 60px 0;
+}
+
+.payments-btns .payments-btns-inner {
+    width: 102%;
+    margin: 0 0 0 -1%;
+}
+
+.payment-radio {
+    display: inline-block;
+    vertical-align: top;
+    width: 31%;
+    margin: 10px 1%;
+    position: relative;
+}
+
+.payment-radio input[type="radio"] {
+    width: 1px;
+    height: 1px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    opacity: .01;
+}
+
+.payment-radio label {
+    display: table;
+    width: 100%;
+    cursor: pointer;
+    margin: 10px 2%;
+    padding: 7px 22px;
+    border: 2px dashed #b9c2d0;
+    background: transparent;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    border-radius: 8px;
+
+    -webkit-transition-property: border;
+    -webkit-transition-duration: .3s;
+    -webkit-transition-timing-function: ease;
+
+    -moz-transition-property: border;
+    -moz-transition-duration: .3s;
+    -moz-transition-timing-function: ease;
+
+    -ms-transition-property: border;
+    -ms-transition-duration: .3s;
+    -ms-transition-timing-function: ease;
+
+    -o-transition-property: border;
+    -o-transition-duration: .3s;
+    -o-transition-timing-function: ease;
+
+    transition-property: border;
+    transition-duration: .3s;
+    transition-timing-function: ease;
+}
+
+
+.payment-radio label:hover {
+    border: 2px dashed #fbc623;
+}
+
+.payment-radio input[type="radio"]:checked  + label {
+    border: 2px dashed #fbc623;
+}
+
+.payment-radio label img {
+    display: table-cell;
+    vertical-align: middle;
+    width: auto;
+    height: auto;
+    max-width: 54px;
+    max-height: 54px;
+}
+
+.payment-radio label span {
+    display: table-cell;
+    vertical-align: middle;
+    padding: 0 0 0 7px;
+    width: 80%;
+    font-family: "Avenir Next", Arial, Verdana, sans-serif;
+    font-size: 22px;
+    line-height: 26px;
+    font-weight: bold;
+    color: #2166ba;
+}
+
+.payment-radio label span.blue {
+    color: #2166ba;
+}
+
+.payment-radio label span.bluelight {
+    color: #10b2ca;
+}
+
+.payment-radio label span.green {
+    color: #21ba77;
+}
+
+/*-- .Section 1 Page 04 --*/
+
+/*-- Section 1 Page 05 --*/
+
+.order-two-cols {
+    margin: 52px 0 62px 0;
+}
+
+.order-two-cols .col {
+    width: 50%;
+}
+
+.order-two-cols p {
+    font-family: "Avenir Next", Arial, Verdana, sans-serif;
+    font-size: 26px;
+    line-height: 36px;
+    font-weight: normal;
+    color: #1f2c37;
+    padding: 5px 0;
+}
+
+.order-two-cols p.num {
+    font-family: "Avenir Next", Arial, Verdana, sans-serif;
+    font-size: 48px;
+    line-height: 54px;
+    font-weight: normal;
+    color: #1f2c37;
+}
+
+
+
+/*-- Section 1 Page 05 --*/
 
 /*-------------------------------------------*/
 /* ----- FOOTER ------ */
@@ -2663,4 +3663,104 @@ footer {
     color: #4f6980;
     text-transform: lowercase;
 }
+
+/*-- Popups --*/
+
+.popups-section {
+    /*display: block;*/
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 13;
+}
+
+.popup-bg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .6);
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.center-block {
+    display: table;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    z-index: 2;
+}
+
+.center-block:before,
+.center-block:after {
+    display: table-cell;
+    vertical-align: middle;
+    content: "";
+    width: 1%;
+}
+
+.center {
+    display: table-cell;
+    vertical-align: middle;
+    width: 98%;
+    text-align: center;
+}
+
+.popup {
+    display: inline-block;
+    vertical-align: top;
+    width: 80%;
+    max-width: 575px;
+    padding: 38px 3% 19px 3%;
+    position: relative;
+    text-align: left;
+    background: rgb(255, 255, 255);
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
+    border-radius: 12px;
+    -webkit-box-shadow: 0px 8px 46px 0px rgba(175, 198, 217, 0.35);
+    -moz-box-shadow: 0px 8px 46px 0px rgba(175, 198, 217, 0.35);
+    -ms-box-shadow: 0px 8px 46px 0px rgba(175, 198, 217, 0.35);
+    box-shadow: 0px 8px 46px 0px rgba(175, 198, 217, 0.35);
+}
+
+.close-popup {
+    position: absolute;
+    top: 13px;
+    right: 13px;
+}
+
+.popup h4 {
+    font-family: "Noto Serif", Arial, Verdana, sans-serif;
+    font-size: 36px;
+    line-height: 43px;
+    font-weight: bold;
+    color: #1f2c37;
+}
+
+.popup .input-box {
+    margin: 24px 0 5px 0;
+}
+
+.popup .input-box input {
+    font-weight: normal;
+}
+
+.popup .yellow-btn-big {
+    display: inline-block;
+    vertical-align: top;
+    width: auto;
+    min-width: 200px;
+    padding: 20px 15px;
+}
+
+
+/*-- /Popups --*/
+
 

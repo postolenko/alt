@@ -64,6 +64,11 @@ $(document).ready(function() {
 
     getHeaderSiteFixedPosition();
 
+    // getFixedSidebarPosition();
+    getFixedSidebarPositionFirst();
+
+    getRespSidebarPosition();
+
     $(window).resize(function() {
 
         $(".wrapper").css({"min-height" : $(window).height() + "px"});
@@ -90,6 +95,27 @@ $(document).ready(function() {
 
         getHeaderSiteFixedPosition();
 
+        getFixedSidebarPosition();
+
+        getRespSidebarPosition();
+
+        // -------------------
+
+        if( bodyWidth > 1240 ) {
+
+            $(".sidebar.fixed_position").css({
+                "left" : $(".left_sidebar_coor").offset().left + "px",
+                "width" : $(".two_width").width() * .31 + "px"
+            });
+
+            $(".sidebar.fixed_position_small").css({
+                "top" : $(".header-site").height() + "px",
+                "left" : $(".left_sidebar_coor").offset().left + "px",
+                "width" : $(".two_width").width() * .31 + "px"
+            });
+
+        }
+
     });
 
 
@@ -98,6 +124,8 @@ $(document).ready(function() {
         getHeaderSiteFixedPosition();
 
         getPaddingTopSections();
+
+        getFixedSidebarPosition();
 
     });
 
@@ -245,7 +273,7 @@ $(document).ready(function() {
 
     $(function() {
 
-        $(".main-nav").slideUp(300);
+        // $(".main-nav").slideUp(300);
 
         $(".respmenubtn").click(function() {
             
@@ -255,15 +283,21 @@ $(document).ready(function() {
 
                 $(".main-nav").slideDown(300);
 
+                $(".main-nav").css({"max-height" : $(window).height() + "px"});
+
                 $(this).addClass("active");
 
                 $(".header-site").addClass("main-nav_active");
+
+                // getMainNavHeight();
 
             } else {
 
                 // $(".main-nav").fadeOut(300);
 
                 $(".main-nav").slideUp(300);
+
+                $(".main-nav").css({"max-height" : "auto"});
 
                 $(this).removeClass("active");
 
@@ -275,6 +309,132 @@ $(document).ready(function() {
 
     });
 
+    // -------------------
+
+    $(function() {
+
+        var companyName;
+        var companyBlokParent;
+        var flag;
+        
+        $(".company_rate").click(function(e) {
+
+            e.preventDefault();
+
+            $("[data-company-info-box]").each(function() {
+
+                if($(this).hasClass("active")) {
+
+                    flag = false;
+
+                    return false;
+
+                } else {
+
+                    flag = true;
+                    
+                }
+
+            });
+
+            if( flag == true ) {
+
+                companyName = $(this).attr("data-company");
+
+                $("[data-company-info-box = '"+ companyName +"']").addClass("active");
+
+                $("[data-company-info-box = '"+ companyName +"']").animate({"top" : 0 + "%"}, 700);
+
+            }
+
+        });
+
+        $(".company-info-box .yellow-block").click(function() {
+
+            companyBlokParent = $(this).closest(".company-info-box ");
+
+            companyBlokParent.removeClass("active");
+
+            companyBlokParent.animate({"top" : ( -1 * 100 ) + "%"}, 700);
+
+        });
+
+    });
+
+    // -------------------
+
+    $(function() {
+       
+        if( $(".two-cols-content-template .sidebar").length == 0 ) {
+
+            $(".main-content").addClass("single");
+
+        }
+
+    });
+
+    // -------------------
+
+    $(function() {
+
+        $(".show_popup").click(function() {
+
+            $(".popups-section ").fadeIn(300);
+
+        });
+
+        $(".close-popup").click(function() {
+
+            $(".popups-section").fadeOut(300);
+
+        });
+
+        $(document).mouseup(function (e){
+
+            hide_element = $('.popup');
+
+            if (!hide_element.is(e.target)
+
+                && hide_element.has(e.target).length === 0) {
+
+                $(".popups-section").fadeOut(300);
+            }
+
+        });
+
+        $(this).keydown(function(eventObject){
+
+            if (eventObject.which == 27) {
+
+               $(".popups-section").fadeOut(300);
+ 
+            }
+
+        });
+
+    });
+
+    // -------------------
+
+    $(function() {
+
+        $(".show_menu").click(function() {
+
+            $(this).toggleClass("active");
+
+            if( $(this).hasClass("active") ) {
+
+                $(".sidebar").animate({"right" : "0" + "%"}, 500);
+
+            } else {
+
+                $(".sidebar").animate({"right" : "-120" + "%"}, 500);
+
+            }
+
+        });
+
+    });
 
     // -------------------
 
@@ -431,6 +591,131 @@ $(document).ready(function() {
         }
 
     }
+
+    function getFixedSidebarPosition() {
+
+        if( bodyWidth > 1240 ) {
+
+            $(".sidebar").css({
+                "height" : "auto"
+            });
+
+            if( $(".left_sidebar_coor").length == 0 ) {
+
+                $(".main-content").append("<span class='left_sidebar_coor'></span>");
+
+            }
+
+            if( $(".sidebar").outerHeight() > $(window).height() ) {
+
+                var bottomSidebarCoor = $(".sidebar").offset().top + $(".sidebar").outerHeight(true);           
+
+                var windowBottomCoor = $(window).scrollTop() + $(window).height();
+
+                if( $(".bottom_sidebar_coor").length == 0 ) {
+
+                    $(".wrapper").append("<span class='bottom_sidebar_coor'></span>");
+
+                    $(".bottom_sidebar_coor").css({
+                        "top" : bottomSidebarCoor + "px"
+                    });
+
+                }
+
+                if( ( windowBottomCoor > bottomSidebarCoor ) && ( $(".bottom_sidebar_coor").length > 0 )) {
+
+                    if( $(".sidebar").hasClass("fixed_position") ) {
+
+                        return true;
+
+                    } else {
+
+                        $(".sidebar").addClass("fixed_position");
+
+                    }
+
+                    $(".sidebar.fixed_position").css({
+                        "left" : $(".left_sidebar_coor").offset().left + "px",
+                        "width" : $(".two_width").width() * .31 + "px"
+                    });      
+
+                } else if( windowBottomCoor <= $(".bottom_sidebar_coor").offset().top ) {
+
+                    if( $(".sidebar").hasClass("fixed_position") ) {
+
+                        $(".sidebar").removeClass("fixed_position");
+
+                        $(".sidebar").css({
+                            "left" : 0,
+                            "width" : "31%"
+                        });
+
+                    }
+
+                }
+
+            } else {
+
+                $(".sidebar").addClass("fixed_position_small");
+                
+                $(".sidebar.fixed_position_small").css({
+                    "top" : $(".header-site").height() + "px",
+                    "left" : $(".left_sidebar_coor").offset().left + "px",
+                    "width" : $(".two_width").width() * .31 + "px"
+                });
+
+            }
+
+        } else {
+
+            $(".sidebar").removeClass("fixed_position");
+            $(".sidebar").removeClass("fixed_position_small");
+
+            $(".sidebar").css({
+                "height" : $(window).height() + "px",
+                "top" : 0,
+                "left" : "initial"
+            });
+
+        }
+
+    }
+
+     function getFixedSidebarPositionFirst() {
+
+        setTimeout(function() {
+
+            getFixedSidebarPosition();
+
+        }, 500);
+
+     }
+
+
+     function getRespSidebarPosition() {
+
+        // if( bodyWidth <= 1240 ) {
+
+        //     // $(".sidebar").removeClass("fixed_position");
+        //     // $(".sidebar").removeClass("fixed_position_small");
+
+        //     $(".sidebar").css({
+        //         // "height" : $(window).height() + "px",
+        //         "top" : 0
+        //         // "left" : "initial"
+        //     });
+
+        // } else {
+
+        //     $(".sidebar").css({
+        //         // "height" : "auto",
+        //         "top" : $(".header-site").height() + "px",
+        //         // "left" : "initial"
+        //     });
+
+        // }
+
+     }
 
 
 });
