@@ -59,6 +59,11 @@ $(document).ready(function() {
 
     // ----------------------------
 
+    var topCoorTooltip;
+    var leftCoorTooltip;
+
+    // ----------------------------
+
     getFooterPosition();
 
     getPaddingTopSections();
@@ -215,10 +220,10 @@ $(document).ready(function() {
 
     $(function() {
 
-        indexAccordeon;
-        accordeonItemIndex;
-        accordeonItemCount;
-        parentAccordeonH;
+        // indexAccordeon;
+        // accordeonItemIndex;
+        // accordeonItemCount;
+        // parentAccordeonH;
 
         $(".accordeon").each(function() {
 
@@ -429,6 +434,21 @@ $(document).ready(function() {
                 $(".sidebar").animate({"right" : "-120" + "%"}, 500);
 
             }
+
+        });
+
+    });
+
+    // -------------------
+
+    $(function() {
+
+        $(".question").mouseover( function(){
+
+            topCoorTooltip = $(this).offset().top - $(this).children(".tooltip").height() - $(this).height() - 20;
+            leftCoorTooltip = $(this).offset().left - 30;
+
+            $(this).children(".tooltip").offset({top : topCoorTooltip , left : leftCoorTooltip});
 
         });
 
