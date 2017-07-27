@@ -592,7 +592,7 @@ $(document).ready(function() {
 
     function getFixedSidebarPosition() {
 
-        if( bodyWidth > 1240 ) {
+        if( bodyWidth > 1240 && $(".sidebar").length > 0) {
 
             $(".sidebar").css({
                 "height" : "auto"
