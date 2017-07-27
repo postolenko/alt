@@ -48,6 +48,17 @@ $(document).ready(function() {
 
     // ----------------------------
 
+    var companyName;
+    var companyBlokParent;
+    var flag;
+
+    // ----------------------------
+
+    var bottomSidebarCoor;
+    var windowBottomCoor;
+
+    // ----------------------------
+
     getFooterPosition();
 
     getPaddingTopSections();
@@ -64,10 +75,7 @@ $(document).ready(function() {
 
     getHeaderSiteFixedPosition();
 
-    // getFixedSidebarPosition();
     getFixedSidebarPositionFirst();
-
-    getRespSidebarPosition();
 
     $(window).resize(function() {
 
@@ -96,8 +104,6 @@ $(document).ready(function() {
         getHeaderSiteFixedPosition();
 
         getFixedSidebarPosition();
-
-        getRespSidebarPosition();
 
         // -------------------
 
@@ -273,13 +279,9 @@ $(document).ready(function() {
 
     $(function() {
 
-        // $(".main-nav").slideUp(300);
-
         $(".respmenubtn").click(function() {
             
             if( $(".main-nav").is(":hidden") ) {
-
-                // $(".main-nav").fadeIn(300);
 
                 $(".main-nav").slideDown(300);
 
@@ -289,11 +291,7 @@ $(document).ready(function() {
 
                 $(".header-site").addClass("main-nav_active");
 
-                // getMainNavHeight();
-
             } else {
-
-                // $(".main-nav").fadeOut(300);
 
                 $(".main-nav").slideUp(300);
 
@@ -313,9 +311,9 @@ $(document).ready(function() {
 
     $(function() {
 
-        var companyName;
-        var companyBlokParent;
-        var flag;
+        // var companyName;
+        // var companyBlokParent;
+        // var flag;
         
         $(".company_rate").click(function(e) {
 
@@ -608,9 +606,9 @@ $(document).ready(function() {
 
             if( $(".sidebar").outerHeight() > $(window).height() ) {
 
-                var bottomSidebarCoor = $(".sidebar").offset().top + $(".sidebar").outerHeight(true);           
+                bottomSidebarCoor = $(".sidebar").offset().top + $(".sidebar").outerHeight(true);           
 
-                var windowBottomCoor = $(window).scrollTop() + $(window).height();
+                windowBottomCoor = $(window).scrollTop() + $(window).height();
 
                 if( $(".bottom_sidebar_coor").length == 0 ) {
 
@@ -688,32 +686,6 @@ $(document).ready(function() {
             getFixedSidebarPosition();
 
         }, 500);
-
-     }
-
-
-     function getRespSidebarPosition() {
-
-        // if( bodyWidth <= 1240 ) {
-
-        //     // $(".sidebar").removeClass("fixed_position");
-        //     // $(".sidebar").removeClass("fixed_position_small");
-
-        //     $(".sidebar").css({
-        //         // "height" : $(window).height() + "px",
-        //         "top" : 0
-        //         // "left" : "initial"
-        //     });
-
-        // } else {
-
-        //     $(".sidebar").css({
-        //         // "height" : "auto",
-        //         "top" : $(".header-site").height() + "px",
-        //         // "left" : "initial"
-        //     });
-
-        // }
 
      }
 

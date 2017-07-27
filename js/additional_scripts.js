@@ -26,16 +26,6 @@ $(document).ready(function() {
 		minimumResultsForSearch: Infinity
 	});
 
-	// $(".select-box.autocomplete").click(function() {
-
-	// 	var selectCoor = $(this).offset().top;
-
-	// 	$(".select2-container--open").css({
-	// 		"top" : selectCoor + "px"
-	// 	});
-
-	// });
-
 	$(".rating").rateYo({
 		starWidth: "18px",
 		spacing: "5px",

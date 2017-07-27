@@ -577,7 +577,6 @@ a:active {
     display: inline-block;
     vertical-align: middle;
     text-align: right;
-    /*position: relative;*/
     position: absolute;
     top: 26px;
     right: 0;
@@ -1113,10 +1112,6 @@ p.shape span {
     z-index: 2;
 }
 
-.accordeon-block {
-
-}
-
 .accordeon {
     max-width: 600px;
 }
@@ -1287,9 +1282,7 @@ p.shape span {
     cursor: pointer;
     text-align: center;
     margin: 25px 0;
-    /*padding: 33px 1% 36px 1%;*/
     padding: 33px 1% 26px 1%;
-    /*background: rgba(224, 229, 227, 1);*/
     border: 1px solid transparent;
     -webkit-border-radius: 9px;
     -moz-border-radius: 9px;
@@ -1644,7 +1637,6 @@ p.shape span {
     font-weight: 500;
     color: #1f2c37;
 }
-
 
 /*-- /Section 2 Main Page --*/
 
@@ -2066,10 +2058,6 @@ p.shape span {
     padding: 20px 0;
 }
 
-.yellow-btn-big-block {
-
-}
-
 .yellow-btn-big {
     display: inline-block;
     vertical-align: top;
@@ -2165,7 +2153,6 @@ p.shape span {
     text-align: center;
     border-collapse: collapse;
     position: relative;
-    /*overflow: hidden;*/
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     -ms-border-radius: 4px;
@@ -2265,7 +2252,6 @@ p.shape span {
     line-height: 29px;
     font-weight: normal;
     color: #243746;
-    /*padding: 22px 0;*/
     padding: 22px 0 32px 0;
 }
 
@@ -2275,10 +2261,6 @@ p.shape span {
     line-height: 24px;
     font-weight: normal;
     color: #44596b;
-}
-
-.selects-block {
-    /*padding: 39px 0 10px 0;*/
 }
 
 .select-box {
@@ -2309,7 +2291,6 @@ p.shape span {
 .radio-box label {
     display: inline-table;
     vertical-align: top;
-    /*width: 100%;*/
     font-family: "Avenir Next", Arial, Verdana, sans-serif;
     font-size: 20px;
     line-height: 29px;
@@ -2652,8 +2633,6 @@ p.shape span {
     font-size: 19px;
 }
 
-
-
 /*-- Sidebar --*/
 
 .sidebar-header {
@@ -2788,7 +2767,6 @@ p.shape span {
 .company-info-box {
     width: 100%;
     position: absolute;
-    /*top: 0;*/
     top: -100%;
     left: 0;
     z-index: 3;
@@ -3253,7 +3231,6 @@ ul.mark-list li:before {
     box-shadow: 0px 0px 17px 0px rgba(251,197,35,0.9);
 }
 
-
 /*-- /Company Info Box --*/
 
 /*-- /Inner Page --*/
@@ -3322,7 +3299,6 @@ ul.mark-list li:before {
     transition-duration: .3s;
     transition-timing-function: ease;
 }
-
 
 .payment-radio label:hover {
     border: 2px dashed #fbc623;
@@ -3393,8 +3369,6 @@ ul.mark-list li:before {
     font-weight: normal;
     color: #1f2c37;
 }
-
-
 
 /*-- Section 1 Page 05 --*/
 
