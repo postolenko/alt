@@ -107,7 +107,7 @@ $(document).ready(function() {
 
         // -------------------
 
-        if( bodyWidth > 1240 ) {
+        if( bodyWidth > 1240 && $(".sidebar").length > 0 ) {
 
             $(".sidebar.fixed_position").css({
                 "left" : $(".left_sidebar_coor").offset().left + "px",
