@@ -2146,9 +2146,7 @@ p.shape span {
     color: #243746;
 }
 
-.yellow-tabs {    
-    display: table;
-    width: 100%;
+.yellow-tabs {
     margin: 10px 0;
     text-align: center;
     border-collapse: collapse;
@@ -2158,8 +2156,10 @@ p.shape span {
     -ms-border-radius: 4px;
     -o-border-radius: 4px;
     border-radius: 4px;
-    border: 1px solid #d6e2e8;
-    flex-direction: row-reverse;
+    display: -webkit-flex;
+    -webkit-flex-direction: row;
+    display: flex;
+    flex-direction: row;
 }
 
 .yellow-tabs input[type="radio"] {
@@ -2174,15 +2174,18 @@ p.shape span {
 }
 
 .yellow-tabs label {
-    display: table-cell;
+    display: inline-block;
     vertical-align: middle;
-    width: 25%;
-    padding: 12px 2%;
+    /*width: 25%;*/
+    width: auto;
+    padding: 12px 20px;
     cursor: pointer;
     position: relative;
     border: 1px solid #d6e2e8;
     background: rgb(255, 255, 255);
     text-align: center;
+    -webkit-flex: 1 1 auto;
+    flex: 1 1 auto;
 
     -webkit-transition-property: background;
     -webkit-transition-duration: .3s;
@@ -2744,12 +2747,15 @@ p.shape span {
     display: inline-block;
     vertical-align: top;
     width: auto;
+    max-width: 98%;
 }
 
 .company_rate img {
     display: block;
     width: auto;
+    height: auto;
     max-width: 90%;
+    max-height: 73px;
 }
 
 .rating-box {
@@ -2767,7 +2773,7 @@ p.shape span {
 .company-info-box {
     width: 100%;
     position: absolute;
-    top: -100%;
+    top: -110%;
     left: 0;
     z-index: 3;
     background: #ffffff;
@@ -3268,9 +3274,10 @@ ul.mark-list li:before {
 .payment-radio label {
     display: table;
     width: 100%;
+    position: relative;
     cursor: pointer;
     margin: 10px 2%;
-    padding: 7px 22px;
+    padding: 7px 8px 7px 39px;
     border: 2px dashed #b9c2d0;
     background: transparent;
     -webkit-border-radius: 8px;
@@ -3308,6 +3315,25 @@ ul.mark-list li:before {
     border: 2px dashed #fbc623;
 }
 
+.payment-radio label:before {
+    display: block;
+    content: "";
+    width: 36px;
+    height: 36px;
+    position: absolute;
+    top: 50%;
+    left: 6px;
+    margin: -14px 0 0 0;
+    background-image: url(../img/radiobtn_sprite.png);
+    background-position: -84px -2px;
+    background-repeat: no-repeat;
+}
+
+.payment-radio input[type="radio"]:checked + label:before  {
+    background-position: -7px -2px;
+}
+
+
 .payment-radio label img {
     display: table-cell;
     vertical-align: middle;
@@ -3341,6 +3367,127 @@ ul.mark-list li:before {
     color: #21ba77;
 }
 
+.choisen {
+    background: #fcfdfd;
+    margin: 10px 0 40px 0;
+    padding: 10px 5%;
+}
+
+.choisen .col {
+    width: 33.33%;
+    text-align: left;
+    padding: 10px 2% 10px 0;
+}
+
+.choisen .col-1 {
+    width: 42%;
+}
+
+.choisen .col-2 {
+    width: 29%;
+}
+
+.choisen .col-3 {
+    width: 29%;
+}
+
+.choisen h3 {
+    font-family: "Avenir Next", Arial, Verdana, sans-serif;
+    font-size: 25px;
+    line-height: 35px;
+    font-weight: normal;
+    color: #243746;
+}
+
+.choisen p {
+    font-family: "Avenir Next", Arial, Verdana, sans-serif;
+    font-size: 18px;
+    line-height: 23px;
+    font-weight: normal;
+    color: #243746;
+}
+
+.choisen .img-box {
+    display: block;
+    max-width: 98%;
+    max-height: 73px;
+}
+
+.choisen .img-box img {
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 73px;
+}
+
+.choisen p.price-val {
+    font-family: "Avenir Next", Arial, Verdana, sans-serif;
+    font-size: 34px;
+    line-height: 38px;
+    font-weight: 500;
+    color: #243746;
+}
+
+.choise-two-cols {
+    margin: 40px 0 61px 0;
+}
+
+.choise-two-cols .col {
+    width: 50%;
+    padding: 10px 5% 10px 0
+}
+
+.checkbox-blok {
+    position: relative;
+    margin: 12px 0 19px 0;
+}
+
+.checkbox-blok input[type="checkbox"] {
+    display: block;
+    width: 1px;
+    height: 1px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    z-index: .01;
+}
+
+.checkbox-blok label:before {
+    display: block;
+    content: "";
+    width: 40px;
+    height: 34px;
+    position: absolute;
+    top: -4px;
+    left: 0;
+    background-image: url(../img/checkbox_sprite.png);
+    background-repeat: no-repeat;
+    background-position: 0 0;
+}
+
+.checkbox-blok input[type="checkbox"]:checked + label:before {
+    background-position: 0px -44px;
+}
+
+.checkbox-blok label {
+    padding: 5px 10% 0 50px;
+    font-family: "Avenir Next", Arial, Verdana, sans-serif;
+    font-size: 25px;
+    line-height: 35px;
+    font-weight: normal;
+    color: #243746;
+}
+
+.choise-two-cols p {
+    font-family: "Avenir Next", Arial, Verdana, sans-serif;
+    font-size: 18px;
+    line-height: 23px;
+    font-weight: normal;
+    color: #243746;
+}
+
 /*-- .Section 1 Page 04 --*/
 
 /*-- Section 1 Page 05 --*/
@@ -3371,6 +3518,14 @@ ul.mark-list li:before {
 }
 
 /*-- Section 1 Page 05 --*/
+
+/*-- Section 1 Oformlenie Zakaza --*/
+
+.form-box.big-margin-bottom {
+    margin-bottom: 70px;
+}
+
+/*-- /Section 1 Oformlenie Zakaza --*/
 
 /*-------------------------------------------*/
 /* ----- FOOTER ------ */

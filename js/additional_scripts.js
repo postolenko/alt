@@ -10,6 +10,8 @@
 
 $(document).ready(function() {
 
+	var rateVal;
+
 	$(".mosaik").isotope({
 	  itemSelector: ".mosaik-item",
 	  percentPosition: true,
@@ -17,21 +19,49 @@ $(document).ready(function() {
 		  horizontalOrder: true,
 		  columnWidth: '.grid-sizer'
 		}
+	});	
+
+	$("select").each(function() {
+
+		if( $(this).hasClass("ui--input-select__field") ) {
+
+			return true;
+
+		} else {
+
+			$example = $("select").select2();
+
+			$("select.search-false").select2({
+				minimumResultsForSearch: Infinity
+			});
+
+		}
+
 	});
 
-	$("select").select2({
-	});
+	$(".change_preferens label").on("click", function () {
 
-	$("select.search-false").select2({
-		minimumResultsForSearch: Infinity
-	});
+		var labelVal = $(this).attr("data-value");
 
-	$(".rating").rateYo({
-		starWidth: "18px",
-		spacing: "5px",
-	    normalFill: "#ebeef0",
-	    ratedFill: "#ffd44f"
-	  });
+		$(".selectChange").val(labelVal).trigger("change");
+
+	});
+	
+
+	$(".rating").each(function() {
+
+		rateVal = +( $(this).attr("data-rate") );
+
+		$(this).rateYo({
+			starWidth: "18px",
+			spacing: "5px",
+		    normalFill: "#ebeef0",
+		    ratedFill: "#ffd44f",
+		    rating: rateVal,
+		    readOnly: true
+		  });
+
+	});
 
 
 });

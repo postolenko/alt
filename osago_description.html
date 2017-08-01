@@ -59,7 +59,14 @@
 						<li><a href="tel:88000805557">88 000 805 557</a><br><span>Бесплатный</span></li>
 						<li><a href="tel:+77009788200">+ 77 009 788 200 </a><br><a target="_blank" href="https://api.whatsapp.com/send?phone=77009788200" class="blue-link">WhatsApp<i class="fa fa-whatsapp" aria-hidden="true"></i></a></li>
 					</ul>
-					<a class="call-back show_popup" href="#">Позвоните мне</a>
+
+					<!-- Кнопки вызова попапа -->
+
+					<a class="call-back show_popup" href="#" data-show-popup = "popup_1">Позвоните мне</a>
+					<a class="call-back show_popup" href="#" data-show-popup = "popup_2">Позвоните мне</a>
+
+					<!-- .Кнопки вызова попапа -->
+
 					<a href="#" class="yellow-btn">Заказать страховку</a>
 
 					<div class="respmenubtn-box">
@@ -158,8 +165,10 @@
 	<!-- /Header -->
 
 	<!-- Popups -->
+	<!-- Вот сами попапы -->
 
-		<div class="popups-section">
+
+		<div class="popups-section" data-popup = "popup_1">
 			
 			<div class="popup-bg"></div>
 
@@ -169,9 +178,67 @@
 
 					<div class="popup">
 
-						<button type="button" class="close-popup close-y-b"></button>
+						<button type="button" class="close-popup close-y-b close-popup-btn"></button>
 
 						<h4>Перезвоните мне</h4>
+
+						<div class="input-box">
+							<input type="tel" placeholder="Ваш номер телефона">
+						</div>
+
+						<button type="submit" class="yellow-btn-big">Отправить</button>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+
+		<div class="popups-section" data-popup = "popup_2">
+			
+			<div class="popup-bg"></div>
+
+			<div class="center-block">
+
+				<div class="center">
+
+					<div class="popup">
+
+						<button type="button" class="close-popup close-y-b close-popup-btn"></button>
+
+						<h4>Перезвоните мне 2</h4>
+
+						<div class="input-box">
+							<input type="tel" placeholder="Ваш номер телефона">
+						</div>
+
+						<button type="submit" class="yellow-btn-big">Отправить</button>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+
+		<div class="popups-section" data-popup = "popup_3">
+			
+			<div class="popup-bg"></div>
+
+			<div class="center-block">
+
+				<div class="center">
+
+					<div class="popup">
+
+						<button type="button" class="close-popup close-y-b close-popup-btn"></button>
+
+						<h4>Перезвоните мне 3</h4>
 
 						<div class="input-box">
 							<input type="tel" placeholder="Ваш номер телефона">
@@ -262,7 +329,7 @@
 
 												<div class="rating-table-header offset-ziro">
 													<div class="rating-box">
-														<div class="rating"></div>
+														<div class="rating" data-rate = "1.5"></div>
 														<p>1.5</p>
 													</div>
 
@@ -385,7 +452,7 @@
 
 												<div class="rating-table-header offset-ziro">
 													<div class="rating-box">
-														<div class="rating"></div>
+														<div class="rating" data-rate = "1.5"></div>
 														<p>1.5</p>
 													</div>
 
@@ -508,7 +575,7 @@
 
 												<div class="rating-table-header offset-ziro">
 													<div class="rating-box">
-														<div class="rating"></div>
+														<div class="rating" data-rate = "1.5"></div>
 														<p>1.5</p>
 													</div>
 
@@ -587,7 +654,7 @@
 
 									<div class="yellow-btn-big-block align-center">
 
-										<a href="#" class="yellow-btn-big"><i class="photo-icon"></i>Заполните вместо меня</a>
+										<a href="#" class="yellow-btn-big show_popup" data-show-popup = "popup_3"><i class="photo-icon"></i>Заполните вместо меня</a>
 
 									</div>
 
@@ -595,19 +662,19 @@
 
 										<h3>Используйте «быстрые настройки».</h3>
 
-										<div class="yellow-tabs offset-ziro">
+										<div class="yellow-tabs change_preferens offset-ziro">
 
 											<input type="radio" id="tab-1" name="tabs-1" checked>
-											<label for="tab-1"><span>Пользовательская</span></label>
+											<label for="tab-1" data-value = "1"><span>Пользовательская</span></label>
 
 											<input type="radio" id="tab-2" name="tabs-1">
-											<label for="tab-2"><span>Дешевая</span></label>
+											<label for="tab-2" data-value = "2"><span>Дешевая</span></label>
 
 											<input type="radio" id="tab-3" name="tabs-1">
-											<label for="tab-3"><span>Средняя</span></label>
+											<label for="tab-3" data-value = "3"><span>Средняя</span></label>
 
 											<input type="radio" id="tab-4" name="tabs-1">
-											<label for="tab-4"><span>Дорогая</span></label>
+											<label for="tab-4" data-value = "4"><span>Дорогая</span></label>
 
 										</div>
 
@@ -624,12 +691,11 @@
 											</div>
 
 											<div class="select-box">
-												<select>
-													<option>Тип транспортного средства (ТС)</option>
-													<option>Тип транспортного средства (ТС)</option>
-													<option>Тип транспортного средства (ТС)</option>
-													<option>Тип транспортного средства (ТС)</option>
-													<option>Тип транспортного средства (ТС)</option>
+												<select class="selectChange">
+													<option value = "1">Пользовательская</option>
+													<option value = "2">Дешевая</option>
+													<option value = "3">Средняя</option>
+													<option value = "4">Дорогая</option>
 												</select>
 											</div>
 
@@ -721,7 +787,7 @@
 										<h3>Срок страховки</h3>
 
 										<div class="select-box">
-											<select class="search-false">
+											<select class="select-2 search-false">
 												<option>Срок 1</option>
 												<option>Срок 2</option>
 												<option>Срок 3</option>
@@ -812,7 +878,7 @@
 									<div class="col col-2">
 										<a href="#" class="company-logo company_rate" data-company = "company_1"><img src="img/companies/company__01.png" alt=""></a>
 										<div class="rating-box">
-											<div class="rating"></div>
+											<div class="rating" data-rate = "3"></div>
 										</div>
 									</div>
 								</div>
@@ -828,7 +894,7 @@
 									<div class="col col-2">
 										<a href="#" class="company-logo company_rate" data-company = "company_2"><img src="img/companies/company__02.png" alt=""></a>
 										<div class="rating-box">
-											<div class="rating"></div>
+											<div class="rating" data-rate = "5"></div>
 										</div>
 									</div>
 								</div>
@@ -844,7 +910,7 @@
 									<div class="col col-2">
 										<a href="#" class="company-logo company_rate" data-company = "company_3"><img src="img/companies/company__03.png" alt=""></a>
 										<div class="rating-box">
-											<div class="rating"></div>
+											<div class="rating" data-rate = "4.5"></div>
 										</div>
 									</div>
 								</div>

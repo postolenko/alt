@@ -48,6 +48,7 @@ $(document).ready(function() {
 
     // ----------------------------
 
+    var companyInfoBoxTopCoord;
     var companyName;
     var companyBlokParent;
     var flag;
@@ -82,6 +83,8 @@ $(document).ready(function() {
 
     getFixedSidebarPositionFirst();
 
+    gettopPositionCompanyInfoBox();
+
     $(window).resize(function() {
 
         $(".wrapper").css({"min-height" : $(window).height() + "px"});
@@ -109,6 +112,8 @@ $(document).ready(function() {
         getHeaderSiteFixedPosition();
 
         getFixedSidebarPosition();
+
+        gettopPositionCompanyInfoBox();
 
         // -------------------
 
@@ -316,6 +321,7 @@ $(document).ready(function() {
 
     $(function() {
 
+        // var companyInfoBoxTopCoord;
         // var companyName;
         // var companyBlokParent;
         // var flag;
@@ -346,7 +352,7 @@ $(document).ready(function() {
 
                 $("[data-company-info-box = '"+ companyName +"']").addClass("active");
 
-                $("[data-company-info-box = '"+ companyName +"']").animate({"top" : 0 + "%"}, 700);
+                $("[data-company-info-box = '"+ companyName +"']").animate({"top" : 0 + "px"}, 700);
 
             }
 
@@ -358,7 +364,7 @@ $(document).ready(function() {
 
             companyBlokParent.removeClass("active");
 
-            companyBlokParent.animate({"top" : ( -1 * 100 ) + "%"}, 700);
+            companyBlokParent.animate({"top" : ( -1 * ( companyBlokParent.outerHeight(true) + $(".main-content-inner").offset().top ) ) + "px"}, 700);
 
         });
 
@@ -380,15 +386,24 @@ $(document).ready(function() {
 
     $(function() {
 
-        $(".show_popup").click(function() {
+        var popupShowAttr;
+        var parentPopup;
 
-            $(".popups-section ").fadeIn(300);
+        $(".show_popup").click(function(e) {
+
+            e.preventDefault();
+
+            popupShowAttr = $(this).attr("data-show-popup");
+
+            $(".popups-section[data-popup = '"+ popupShowAttr+"']").fadeIn(300);
 
         });
 
-        $(".close-popup").click(function() {
+        $(".close-popup-btn").click(function() {
 
-            $(".popups-section").fadeOut(300);
+            parentPopup = $(this).closest(".popups-section");
+
+            parentPopup.fadeOut(300);
 
         });
 
@@ -556,16 +571,20 @@ $(document).ready(function() {
 
     function getTrianglesSize() {
 
-        $(".price").each(function() {
+        setTimeout(function() {
 
-            boderWidth = $(this).outerHeight() / 2;
+            $(".price").each(function() {
 
-            $(this).children(".tr").css({
-                "border-top" : boderWidth + "px solid transparent",
-                "border-bottom" : boderWidth + "px solid transparent"
+               var boderWidth = $(this).outerHeight() / 2;
+
+                $(this).children(".tr").css({
+                    "border-top" : boderWidth + "px solid transparent",
+                    "border-bottom" : boderWidth + "px solid transparent"
+                });
+
             });
 
-        });
+        }, 400)
 
     }
 
@@ -640,6 +659,8 @@ $(document).ready(function() {
 
                 }
 
+                // console.log( ( $(".sidebar").offset().top + $(".sidebar").height() ) +"  "+ $(".footer").offset().top +"  "+ ($(".footer").offset().top - $(window).scrollTop()));
+
                 if( ( windowBottomCoor > bottomSidebarCoor ) && ( $(".bottom_sidebar_coor").length > 0 )) {
 
                     if( $(".sidebar").hasClass("fixed_position") ) {
@@ -670,7 +691,15 @@ $(document).ready(function() {
 
                     }
 
+                // } else if(( $(".sidebar").offset().top + $(".sidebar").height() ) >= ( ( $(window).scrollTop() + $(window).height() ) -$(".footer").offset().top ) ) {
                 }
+                //  else if(( $(window).scrollTop() + $(window).height() ) >= $(".footer").offset().top && $(".sidebar").hasClass("fixed_position")) {
+
+                //     $(".sidebar").css({
+                //         "bottom" : ( ( $(window).scrollTop() + $(window).height() ) - $(".footer").offset().top ) + "px"
+                //     });
+
+                // }
 
             } else {
 
@@ -708,6 +737,33 @@ $(document).ready(function() {
         }, 500);
 
      }
+
+
+    function gettopPositionCompanyInfoBox() {
+
+        setTimeout(function() {
+
+            if( $(".company-info-box").length > 0 ) {
+
+                companyInfoBoxTopCoord = $(".main-content-inner").offset().top;
+
+                $(".company-info-box").each(function() {
+
+                    if( $(this).offset().top < 0 && !$(this).hasClass("active") ) {
+
+                        $(this).css({
+                            "top" : -1 * ( $(this).outerHeight(true) + companyInfoBoxTopCoord ) + "px"
+                        });
+
+                    }
+
+                });
+
+            }
+
+        }, 500);
+
+    }
 
 
 });

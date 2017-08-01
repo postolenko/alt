@@ -720,11 +720,11 @@
 	}
 
 	.yellow-tabs label {
-	    padding: 12px 1%;
+	    padding: 12px 15px;
 	}
 
 	.yellow-tabs label span {
-	    font-size: 13px;
+	    font-size: 14px;
 	    line-height: 16px;
 	}
 
@@ -790,6 +790,17 @@
 
 	/*-- Section 1 Page 04  --*/
 
+	.choisen .col-1,
+	.choisen .col-2,
+	.choisen .col-3 {
+	    width: 100%;
+	    padding: 5px 0% 5px 0;
+	}
+
+	.choisen h3 {
+	    padding: 10px 0;
+	}
+
 	.payments-btns {
 	    margin: 17px 0 33px 0;
 	}
@@ -810,6 +821,19 @@
 	}
 
 	/*-- /Section 1 Page 04  --*/
+
+	/*-- Section 1 Oformlenie Zakaza --*/
+
+	.choise-two-cols .col {
+	    width: 100%;
+	    padding: 1px 0% 1px 0;
+	}
+
+	.choise-two-cols {
+	    margin: 20px 0 20px 0;
+	}
+
+	/*-- /Section 1 Oformlenie Zakaza --*/
 
 	/*-- Section 1 Page 05 --*/
 
@@ -1127,6 +1151,11 @@
 
 @media only screen and (max-width: 350px) {
 
+	.main-content h2 {
+	    font-size: 27px;
+	    line-height: 31px;
+	}
+
 	/*-- Section 1 Main Page --*/
 
 	.main-h {
@@ -1155,6 +1184,12 @@
 	}
 
 	/*-- /Company Info Box --*/
+
+	.checkbox-blok label {
+	    padding: 5px 0% 0 40px;
+	    font-size: 22px;
+	    line-height: 30px;
+	}
 }
 
 @media only screen and (min-width: 1241px) {
