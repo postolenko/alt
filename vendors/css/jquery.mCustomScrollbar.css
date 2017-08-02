@@ -1274,3 +1274,9 @@ yx-axis
     right: -10px;
     height: auto;
 }
+
+
+.main-nav .mCSB_scrollTools {
+    opacity: 0;
+    margin: 0 -10px 0 0;
+}

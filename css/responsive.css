@@ -202,7 +202,7 @@
 	}
 
 	.yellow-tabs label span {
-	    font-size: 14px;
+	    font-size: 13px;
 	    line-height: 16px;
 	}
 
@@ -284,9 +284,10 @@
 
 	/*-- Sidebar --*/
 
-	.company-item .price {
-	    width: 84px;
-	    padding: 11px 2% 11px 7%;
+	.company-item-table .col-1 p {
+	    font-family: "Avenir Next", Arial, Verdana, sans-serif;
+	    font-size: 16px;
+	    line-height: 18px;
 	}
 
 	.dashed-pill {
@@ -374,6 +375,10 @@
 	}
 
 	.sidebar {
+		width: 70%;
+		display: block;
+		max-width: 460px;
+		min-width: 300px;
 		position: fixed;
 		top: 0;
 		right: -110%;
@@ -872,6 +877,8 @@
 
 }
 
+
+
 @media only screen and (max-width: 630px) {
 
 	/*-- Header Site --*/
@@ -915,8 +922,48 @@
 
 	/*-- /Section 1 Promo Section --*/
 
+/*	.company-item-table .col-1 {
+	    width: 100%;
+	}
+
+	.company-item-table .col-2 {
+	    width: 32%;
+	}
+
+	.company-item-table .col-3 {
+	    width: 68%;
+	}
+
+	.company-item-table .col-1 p {
+	    display: inline-block;
+	    vertical-align: middle;
+	    padding: 3px 6% 3px 0;
+	}*/
+
 }
 
+
+@media only screen and (max-width: 600px) {
+
+	.company-item-table .col-1 {
+	    width: 100%;
+	}
+
+	.company-item-table .col-2 {
+	    width: 32%;
+	}
+
+	.company-item-table .col-3 {
+	    width: 68%;
+	}
+
+	.company-item-table .col-1 p {
+	    display: inline-block;
+	    vertical-align: middle;
+	    padding: 3px 6% 3px 0;
+	}
+
+}
 
 @media only screen and (max-width: 480px) {
 

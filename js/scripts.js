@@ -631,98 +631,111 @@ $(document).ready(function() {
 
     function getFixedSidebarPosition() {
 
-        if( bodyWidth > 1240 && $(".sidebar").length > 0) {
+        if( $(".sidebar").height() < $(".main-content").height() ) {
 
-            $(".sidebar").css({
-                "height" : "auto"
-            });
+            if( ( $(window).scrollTop() + $(window).height() ) >= $(".footer").offset().top ) {
 
-            if( $(".left_sidebar_coor").length == 0 ) {
-
-                $(".main-content").append("<span class='left_sidebar_coor'></span>");
-
-            }
-
-            if( $(".sidebar").outerHeight() > $(window).height() ) {
-
-                bottomSidebarCoor = $(".sidebar").offset().top + $(".sidebar").outerHeight(true);           
-
-                windowBottomCoor = $(window).scrollTop() + $(window).height();
-
-                if( $(".bottom_sidebar_coor").length == 0 ) {
-
-                    $(".wrapper").append("<span class='bottom_sidebar_coor'></span>");
-
-                    $(".bottom_sidebar_coor").css({
-                        "top" : bottomSidebarCoor + "px"
-                    });
-
-                }
-
-                // console.log( ( $(".sidebar").offset().top + $(".sidebar").height() ) +"  "+ $(".footer").offset().top +"  "+ ($(".footer").offset().top - $(window).scrollTop()));
-
-                if( ( windowBottomCoor > bottomSidebarCoor ) && ( $(".bottom_sidebar_coor").length > 0 )) {
-
-                    if( $(".sidebar").hasClass("fixed_position") ) {
-
-                        return true;
-
-                    } else {
-
-                        $(".sidebar").addClass("fixed_position");
-
-                    }
-
-                    $(".sidebar.fixed_position").css({
-                        "left" : $(".left_sidebar_coor").offset().left + "px",
-                        "width" : $(".two_width").width() * .31 + "px"
-                    });      
-
-                } else if( windowBottomCoor <= $(".bottom_sidebar_coor").offset().top ) {
-
-                    if( $(".sidebar").hasClass("fixed_position") ) {
-
-                        $(".sidebar").removeClass("fixed_position");
-
-                        $(".sidebar").css({
-                            "left" : 0,
-                            "width" : "31%"
-                        });
-
-                    }
-
-                // } else if(( $(".sidebar").offset().top + $(".sidebar").height() ) >= ( ( $(window).scrollTop() + $(window).height() ) -$(".footer").offset().top ) ) {
-                }
-                //  else if(( $(window).scrollTop() + $(window).height() ) >= $(".footer").offset().top && $(".sidebar").hasClass("fixed_position")) {
-
-                //     $(".sidebar").css({
-                //         "bottom" : ( ( $(window).scrollTop() + $(window).height() ) - $(".footer").offset().top ) + "px"
-                //     });
-
-                // }
+                $(".sidebar").css({
+                    "bottom" : ( ( $(window).scrollTop() + $(window).height() ) - $(".footer").offset().top ) + "px"
+                });
 
             } else {
 
-                $(".sidebar").addClass("fixed_position_small");
-                
-                $(".sidebar.fixed_position_small").css({
-                    "top" : $(".header-site").height() + "px",
-                    "left" : $(".left_sidebar_coor").offset().left + "px",
-                    "width" : $(".two_width").width() * .31 + "px"
+                $(".sidebar").css({
+                    "bottom" : 0 + "px"
                 });
 
             }
 
-        } else {
+            bottomSidebarCoor = $(".sidebar").offset().top + $(".sidebar").outerHeight(true);
 
-            $(".sidebar").removeClass("fixed_position");
-            $(".sidebar").removeClass("fixed_position_small");
+            if( bodyWidth > 1240 && $(".sidebar").length > 0 ) {
 
-            $(".sidebar").css({
-                "height" : $(window).height() + "px",
-                "top" : 0,
-                "left" : "initial"
-            });
+                $(".sidebar").css({
+                    "height" : "auto",
+                    "top" : "initial"
+                });
+
+                $(".sidebar").mCustomScrollbar("destroy");
+
+                if( $(".left_sidebar_coor").length == 0 ) {
+
+                    $(".main-content").append("<span class='left_sidebar_coor'></span>");
+
+                }            
+
+                windowBottomCoor = $(window).scrollTop() + $(window).height();
+
+                if( $(".sidebar").outerHeight() > $(window).height() ) {
+
+                    bottomSidebarCoor = $(".sidebar").offset().top + $(".sidebar").outerHeight(true);                
+
+                    if( $(".bottom_sidebar_coor").length == 0 ) {
+
+                        $(".wrapper").append("<span class='bottom_sidebar_coor'></span>");
+
+                        $(".bottom_sidebar_coor").css({
+                            "top" : bottomSidebarCoor + "px"
+                        });
+
+                    }
+
+                    if( ( windowBottomCoor > bottomSidebarCoor ) && ( $(".bottom_sidebar_coor").length > 0 )) {
+
+                        if( $(".sidebar").hasClass("fixed_position") ) {
+
+                            return true;
+
+                        } else {
+
+                            $(".sidebar").addClass("fixed_position");
+
+                        }                        
+
+                        $(".sidebar.fixed_position").css({
+                            "left" : $(".left_sidebar_coor").offset().left + "px",
+                            "width" : $(".two_width").width() * .31 + "px"
+                        });
+
+                    } else if( windowBottomCoor <= $(".bottom_sidebar_coor").offset().top ) {
+
+                        if( $(".sidebar").hasClass("fixed_position") ) {
+
+                            $(".sidebar").removeClass("fixed_position");                          
+
+                            $(".sidebar").css({
+                                "left" : 0,
+                                "width" : "31%"
+                            });
+
+                        }
+
+                    }
+
+                } else {
+
+                    $(".sidebar").addClass("fixed_position_small");
+                    
+                    $(".sidebar.fixed_position_small").css({
+                        "top" : $(".header-site").height() + "px"
+                    });
+
+                }
+
+            } else {
+
+                $(".sidebar").removeClass("fixed_position");
+                $(".sidebar").removeClass("fixed_position_small");
+
+                $(".sidebar").css({
+                    "height" : $(window).height() + "px",
+                    "top" : 0,
+                    "left" : "initial"
+                });
+
+                $(".scroll").mCustomScrollbar();
+
+            }
 
         }
 
